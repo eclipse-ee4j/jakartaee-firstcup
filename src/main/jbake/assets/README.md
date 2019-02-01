@@ -1,40 +1,44 @@
 # About this Project
 
-The {{site.title}} Project is the official site for the _Java Platform, Enterprise Edition (Java EE) 8
-Your First Cup: An Introduction to the Java EE Platform_ tutorial that is delivered with the Java EE 8 SDK. The
-{{site.title}} teaches and demonstrates Java EE basics and is intended for beginners.
+The {{site.title}} Project is the official site for the
+_Jakarta Enterprise Edition Your First Cup: An Introduction to Jakarta EE_.
+The {{site.title}} teaches and demonstrates Jakarta EE basics and is
+intended for beginners.
 
-[View the First Cup of Java EE Tutorial](toc.html)
+[View the First Cup of Jakarta EE Tutorial](toc.html)
 
-
-The latest build of the {{site.title}} is automatically published to this site as HTML. The tutorial is authored in
-[AsciiDoc](http://asciidoc.org/). AsciiDoc is similar to original markdown but is particularly suited for user
-documentation. If you are interested in forking the tutorial source files or building the tutorials locally, then see
-the [javaee/firstcup](https://github.com/javaee/firstcup) repository.
+The latest build of the {{site.title}} is automatically published to
+this site as HTML via a Jenkins job that watches for changes to the
+master branch of the repository. The tutorial is authored in
+[AsciiDoc](http://asciidoc.org/). AsciiDoc is similar to markdown but
+is particularly suited for user documentation. If you are interested in
+forking the tutorial source files or building the tutorials locally,
+then see the [repository](https://github.com/eclipse-ee4j/glassfish-firstcup).
 
 # Related Projects
 
-* [javaee/firstcup-examples](https://github.com/javaee/firstcup-examples): this repository contains the example code that
-is used in the {{site.title}}.
+* [eclipse-ee4j/glassfish-firstcup-examples](https://github.com/eclipse-ee4j/glassfish-firstcup-examples):
+this repository contains the example code that is used in the {{site.title}}.
 
-* [Java EE Tutorial](https://javaee.github.io/tutorial/): the Java EE Tutorial teaches and demonstrates the Java
-EE features that are used to develop enterprise applications. This tutorial is also included in the Java EE 8 SDK.
+* [Jakarta EE Tutorial](https://eclipse-ee4j.github.io/glassfish-tutorial/):
+the Jakarta EE Tutorial teaches and demonstrates the Jakarta EE
+features that are used to develop enterprise applications.
 
-* [javaee/tutorial-examples](https://github.com/javaee/tutorial-examples): this repository contains the example code that
-is used in the Java EE Tutorial.
-
-* [GlassFish Samples](https://github.com/javaee/glassfish-samples): this repository contains the sample applications
-that are delivered with the Java EE 8 SDK.
-
+* [eclipse-ee4j/glassfish-tutorial-examples](https://github.com/eclipse-ee4j/gla
+ssfish-tutorial-examples):
+this repository contains the example code that is used in the
+Jakarta EE Tutorial.
 
 # How-to Contribute
-The easiest way to contribute is by opening an [issue](https://github.com/javaee/firstcup/issues)  that contains
-feedback and review comments. All issues will be addressed as soon as possible.
+The easiest way to contribute is by opening an
+[issue](https://github.com/eclipse-ee4j/glassfish-firstcup/issues)
+that contains feedback and review comments.
 
+The {{site.title}} is open for contributions and your help is greatly
+appreciated. If you have an idea for the tutorial and want to add a
+section or update an existing section, then review the following
+links:
 
-The {{site.title}} is open for contributions and your help is greatly appreciated. If you have an idea for the
-tutorial and want to add a section or update an existing section, then review the following links:
-
-* [Contribute](CONTRIBUTING.md)
-* [Pull Request Acceptance Workflow](pr_doc_workflow.md)
-* [License](LICENSE.md)
+* [Contribute](CONTRIBUTING)
+* [Pull Request Acceptance Workflow](pr_doc_workflow)
+* [License](LICENSE)

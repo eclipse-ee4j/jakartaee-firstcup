@@ -1,14 +1,17 @@
-theme: jekyll-theme-architect
+remote_theme: jakartaee/jekyll-theme-jakarta-ee
 
 title: [First Cup of Jakarta EE Tutorial]
 description: [First Cup of Jakarta EE Tutorial Project]
 
 # sidebar links url
 links:
-  source: https://github.com/javaee/firstcup
-  download: https://github.com/javaee/firstcup/releases
-  #mailinglist: https://javaee.groups.io/g/tutorial
+  source: https://github.com/eclipse-ee4j/glassfish-firstcup
+  download: https://github.com/eclipse-ee4j/glassfish-firstcup/releases
+  mailinglist: https://accounts.eclipse.org/mailing-list/glassfish-dev
   #javadocs:
-  docs: https://javaee.github.io/firstcup/toc.html
+  docs: toc.html
   #faq:
 
+include:
+  - LICENSE.md
+  - CONTRIBUTING.md
