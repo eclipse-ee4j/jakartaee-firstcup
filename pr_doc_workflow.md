@@ -2,21 +2,21 @@
 
 ## One Time Setup
 * [Fork](https://help.github.com/articles/fork-a-repo/) the
-[tutorial](https://github.com/eclipse-ee4j/glassfish-firstcup/) repository.
+[tutorial](https://github.com/eclipse-ee4j/jakartaee-firstcup/) repository.
 * [Clone](https://help.github.com/articles/cloning-a-repository/)
 your forked repository.
 ```
-$ git clone https://github.com/YOUR-USERNAME/glassfish-firstcup.git
+$ git clone https://github.com/YOUR-USERNAME/jakartaee-firstcup.git
 ```
 * [Configure](https://help.github.com/articles/configuring-a-remote-for-a-fork/)
 the remote for your fork.
 ```
-$ git remote add upstream https://github.com/eclipse-ee4j/glassfish-firstcup.git
+$ git remote add upstream https://github.com/eclipse-ee4j/jakartaee-firstcup.git
 $ git remote -v
-origin    https://github.com/YOUR-USERNAME/glassfish-firstcup.git (fetch)
-origin    https://github.com/YOUR-USERNAME/glassfish-firstcup.git (push)
-upstream    https://github.com/eclipse-ee4j/glassfish-firstcup.git (fetch)
-upstream    https://github.com/eclipse-ee4j/glassfish-firstcup.git (push)
+origin    https://github.com/YOUR-USERNAME/jakartaee-firstcup.git (fetch)
+origin    https://github.com/YOUR-USERNAME/jakartaee-firstcup.git (push)
+upstream    https://github.com/eclipse-ee4j/jakartaee-firstcup.git (fetch)
+upstream    https://github.com/eclipse-ee4j/jakartaee-firstcup.git (push)
 ```
 ## Raising a Pull Request
 * Sync the master of your fork with upstream master.
@@ -41,10 +41,10 @@ $ git commit -m "my commit message"
 $ git push origin doc_update
 ```
 * Before raising a Pull Request, please raise an
-[issue](https://github.com/eclipse-ee4j/glassfish-firstcup/issues)
+[issue](https://github.com/eclipse-ee4j/jakartaee-firstcup/issues)
 if it doesn't exist. We would like every Pull Request to be associated
 with an issue. Submit the Pull Request referring to the issue number.
-* Raise a [Pull Request](https://github.com/eclipse-ee4j/glassfish-firstcup/pulls).
+* Raise a [Pull Request](https://github.com/eclipse-ee4j/jakartaee-firstcup/pulls).
 * Make sure you put a proper 'title' for the Pull Request. The title of
 the Pull Request would become the commit message. Instead of giving
 'title' like "Iss xxxx" or "Fixes #xxxxx", consider giving a proper one
