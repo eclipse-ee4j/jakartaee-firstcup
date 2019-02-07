@@ -12,7 +12,7 @@ generated from AsciiDoc content.
 
 Note that the First Cup Tutorial code examples are located in a
 separate repository
-[eclipse-ee4j/glassfish-firstcup-examples](https://github.com/eclipse-ee4j/glassfish-firstcup-examples).
+[eclipse-ee4j/jakartaee-firstcup-examples](https://github.com/eclipse-ee4j/jakartaee-firstcup-examples).
 
 ## Contributing
 The easiest way to contribute is by opening an issue in this project
@@ -34,7 +34,7 @@ tutorial. Note that any changes that are pushed to the master branch
 automatically trigger a build of the site files and tutorial sources.
 The results are automatically pushed to the gh-pages branch. You can
 view the published site
-[here](https://eclipse-ee4j.github.io/glassfish-firstcup).
+[here](https://eclipse-ee4j.github.io/jakartaee-firstcup).
 
 ### Pre-Requisites
 

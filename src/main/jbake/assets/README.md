@@ -13,25 +13,25 @@ master branch of the repository. The tutorial is authored in
 [AsciiDoc](http://asciidoc.org/). AsciiDoc is similar to markdown but
 is particularly suited for user documentation. If you are interested in
 forking the tutorial source files or building the tutorials locally,
-then see the [repository](https://github.com/eclipse-ee4j/glassfish-firstcup).
+then see the [repository](https://github.com/eclipse-ee4j/jakartaee-firstcup).
 
 # Related Projects
 
-* [eclipse-ee4j/glassfish-firstcup-examples](https://github.com/eclipse-ee4j/glassfish-firstcup-examples):
+* [eclipse-ee4j/jakartaee-firstcup-examples](https://github.com/eclipse-ee4j/jakartaee-firstcup-examples):
 this repository contains the example code that is used in the {{site.title}}.
 
-* [Jakarta EE Tutorial](https://eclipse-ee4j.github.io/glassfish-tutorial/):
+* [Jakarta EE Tutorial](https://eclipse-ee4j.github.io/jakartaee-tutorial/):
 the Jakarta EE Tutorial teaches and demonstrates the Jakarta EE
 features that are used to develop enterprise applications.
 
-* [eclipse-ee4j/glassfish-tutorial-examples](https://github.com/eclipse-ee4j/gla
+* [eclipse-ee4j/jakartaee-tutorial-examples](https://github.com/eclipse-ee4j/gla
 ssfish-tutorial-examples):
 this repository contains the example code that is used in the
 Jakarta EE Tutorial.
 
 # How-to Contribute
 The easiest way to contribute is by opening an
-[issue](https://github.com/eclipse-ee4j/glassfish-firstcup/issues)
+[issue](https://github.com/eclipse-ee4j/jakartaee-firstcup/issues)
 that contains feedback and review comments.
 
 The {{site.title}} is open for contributions and your help is greatly
