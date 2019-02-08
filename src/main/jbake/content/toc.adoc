@@ -46,25 +46,25 @@ IDE]
 ////
 
 [[understanding-java-platform-enterprise-edition]]
-link:java-ee.html#GCRLO[2 Understanding Java Platform, Enterprise Edition]
+link:jakarta-ee.html#GCRLO[2 Understanding Java Platform, Enterprise Edition]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* link:java-ee001.html#GCRKY[Overview of Enterprise Applications]
+* link:jakarta-ee001.html#GCRKY[Overview of Enterprise Applications]
 
-** link:java-ee001.html#GCRKR[Tiered Applications]
-*** link:java-ee001.html#GCRLA[The Client Tier]
-*** link:java-ee001.html#GCRNL[The Web Tier]
-*** link:java-ee001.html#GCRLS[The Business Tier]
-*** link:java-ee001.html#GCRKW[The Enterprise Information Systems Tier]
-* link:java-ee002.html#GCRKQ[Jakarta EE Servers and Containers]
+** link:jakarta-ee001.html#GCRKR[Tiered Applications]
+*** link:jakarta-ee001.html#GCRLA[The Client Tier]
+*** link:jakarta-ee001.html#GCRNL[The Web Tier]
+*** link:jakarta-ee001.html#GCRLS[The Business Tier]
+*** link:jakarta-ee001.html#GCRKW[The Enterprise Information Systems Tier]
+* link:jakarta-ee002.html#GCRKQ[Jakarta EE Servers and Containers]
 
-** link:java-ee002.html#GCRMB[The Web Container]
+** link:jakarta-ee002.html#GCRMB[The Web Container]
 
-** link:java-ee002.html#GCRMA[The EJB Container]
+** link:jakarta-ee002.html#GCRMA[The EJB Container]
 
-** link:java-ee002.html#GCRLJ[The Application Client Container]
+** link:jakarta-ee002.html#GCRLJ[The Application Client Container]
 
-[[creating-your-first-java-ee-application]]
+[[creating-your-first-jakarta-ee-application]]
 link:creating-example.html#GCRKP[3 Creating Your First Jakarta EE Application]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -1,8 +1,8 @@
 type=page
 status=published
 title=Overview of Enterprise Applications
-next=java-ee002.html
-prev=java-ee.html
+next=jakarta-ee002.html
+prev=jakarta-ee.html
 ~~~~~~
 = Overview of Enterprise Applications
 
@@ -15,7 +15,7 @@ Overview of Enterprise Applications
 This section describes enterprise applications and how they are designed
 and developed.
 
-As stated above, the Java EE platform is designed to help developers
+As stated above, the Jakarta EE platform is designed to help developers
 create large-scale, multitiered, scalable, reliable, and secure network
 applications. A shorthand name for such applications is *enterprise
 applications*, so called because these applications are designed to
@@ -26,7 +26,7 @@ helpful, even essential, for individual developers and small
 organizations in an increasingly networked world.
 
 The features that make enterprise applications powerful, like security
-and reliability, often make these applications complex. The Java EE
+and reliability, often make these applications complex. The Jakarta EE
 platform reduces the complexity of enterprise application development by
 providing a development model, API, and runtime environment that allow
 developers to concentrate on functionality.
@@ -45,7 +45,7 @@ tier. The middle tier is divided into a web tier and a business tier,
 which handle client requests and process application data, storing it in
 a permanent data store in the data tier.
 
-Java EE application development concentrates on the middle tier to make
+Jakarta EE application development concentrates on the middle tier to make
 enterprise application management easier, more robust, and more secure.
 
 [[GCRLA]][[the-client-tier]]
@@ -53,14 +53,14 @@ enterprise application management easier, more robust, and more secure.
 The Client Tier
 ^^^^^^^^^^^^^^^
 
-The client tier consists of application clients that access a Java EE
+The client tier consists of application clients that access a Jakarta EE
 server and that are usually located on a different machine from the
 server. The clients make requests to the server. The server processes
 the requests and returns a response back to the client. Many different
-types of applications can be Java EE clients, and they are not always,
+types of applications can be Jakarta EE clients, and they are not always,
 or even often, Java applications. Clients can be a web browser, a
 standalone application, or other servers, and they run on a different
-machine from the Java EE server.
+machine from the Jakarta EE server.
 
 [[GCRNL]][[the-web-tier]]
 
@@ -78,12 +78,12 @@ appropriate results from the components in the business tier
 * Perform some basic logic and hold some data temporarily in managed
 beans
 
-link:#GCTOG[Table 2-1] lists some of the main Java EE technologies that
-are used in the web tier in Java EE applications.
+link:#GCTOG[Table 2-1] lists some of the main Jakarta EE technologies that
+are used in the web tier in Jakarta EE applications.
 
 [[sthref6]][[GCTOG]]
 
-Table 2-1 Web-Tier Java EE Technologies
+Table 2-1 Web-Tier Jakarta EE Technologies
 
 [width="80%",cols="25%,74%"]
 |=======================================================================
@@ -95,7 +95,7 @@ validate UI component data; save UI component data to server-side data
 stores; and maintain component state
 
 |Expression Language |A set of standard tags used in Facelets pages to
-refer to Java EE components
+refer to Jakarta EE components
 
 |Servlets |Java programming language classes that dynamically process
 requests and construct responses, usually for HTML pages
@@ -117,8 +117,8 @@ to a particular business domain, like the financial industry, or an
 e-commerce site. In a properly designed enterprise application, the core
 functionality exists in the business tier components.
 
-The following Java EE technologies are among those that are used in the
-business tier in Java EE applications:
+The following Jakarta EE technologies are among those that are used in the
+business tier in Jakarta EE applications:
 
 * Enterprise JavaBeans (enterprise bean) components
 * JAX-RS RESTful web services
@@ -132,13 +132,13 @@ The Enterprise Information Systems Tier
 The enterprise information systems (EIS) tier consists of database
 servers, enterprise resource planning systems, and other legacy data
 sources, like mainframes. These resources typically are located on a
-separate machine from the Java EE server, and are accessed by components
+separate machine from the Jakarta EE server, and are accessed by components
 on the business tier.
 
-The following Java EE technologies are used to access the EIS tier in
-Java EE applications:
+The following Jakarta EE technologies are used to access the EIS tier in
+Jakarta EE applications:
 
 * The Java Database Connectivity API (JDBC)
 * The Java Persistence API
-* The Java EE Connector Architecture
+* The Jakarta EE Connector Architecture
 * The Java Transaction API (JTA)

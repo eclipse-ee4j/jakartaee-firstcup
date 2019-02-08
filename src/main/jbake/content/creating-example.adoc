@@ -1,16 +1,16 @@
 type=page
 status=published
-title=Creating Your First Java EE Application
+title=Creating Your First Jakarta EE Application
 next=creating-example001.html
-prev=java-ee002.html
+prev=jakarta-ee002.html
 ~~~~~~
-= Creating Your First Java EE Application
+= Creating Your First Jakarta EE Application
 
 
-[[GCRKP]][[creating-your-first-java-ee-application]]
+[[GCRKP]][[creating-your-first-jakarta-ee-application]]
 
-3 Creating Your First Java EE Application
------------------------------------------
+3 Creating Your First Jakarta EE Application
+--------------------------------------------
 
 This chapter gives an overview of the example applications and
 step-by-step instructions on coding and running the `dukes-age` web

@@ -26,8 +26,8 @@ Enterprise Edition should be considered references to Jakarta EE.
 Please see the Title page for additional license information.
 ========================================================================
 
-This is Your First Cup: An Introduction to Java Platform, Enterprise
-Edition, a short tutorial for beginning Java EE programmers. This
+This is Your First Cup: An Introduction to Jakarta Platform, Enterprise
+Edition, a short tutorial for beginning Jakarta EE programmers. This
 tutorial is designed to give you a hands-on lesson on developing an
 enterprise application from initial coding to deployment.
 
@@ -36,11 +36,11 @@ enterprise application from initial coding to deployment.
 Audience
 ~~~~~~~~
 
-This tutorial is intended for novice Java EE developers. You should be
+This tutorial is intended for novice Jakarta EE developers. You should be
 familiar with the Java programming language, particularly the features
 introduced in Java Platform, Standard Edition 8. While familiarity with
-enterprise development and Java EE technologies is helpful, this
-tutorial assumes you are new to developing Java EE applications.
+enterprise development and Jakarta EE technologies is helpful, this
+tutorial assumes you are new to developing Jakarta EE applications.
 
 
 [[GCQYU]][[before-you-read-this-book]]
@@ -62,7 +62,7 @@ Related Books and Projects
 The following books and projects may be helpful to you in understanding
 this tutorial:
 
-* The https://javaee.github.io/tutorial[Java EE Tutorial]
+* The https://javaee.github.io/tutorial[Jakarta EE Tutorial]
 * The GlassFish Server Open Source Edition documentation set
 * The NetBeans IDE documentation
 

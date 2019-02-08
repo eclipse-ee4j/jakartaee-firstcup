@@ -85,10 +85,10 @@ data in the Apache Derby database table). The user's web browser is the
 client tier component, as it accesses the rest of the application
 through the web tier.
 
-[[GCRLU]][[java-ee-technologies-used-in-the-example-applications]]
+[[GCRLU]][[jakarta-ee-technologies-used-in-the-example-applications]]
 
-Java EE Technologies Used in the Example Applications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Jakarta EE Technologies Used in the Example Applications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `DukesAgeResource` web service is a JAX-RS resource. The
 `DukesBirthdayBean` enterprise bean is a stateless session bean. The

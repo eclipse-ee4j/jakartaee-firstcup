@@ -37,7 +37,7 @@ Install the Maven Archetypes
 Maven archetypes are templates that create the structure of a particular
 application. There are two archetypes included in the example,
 `dukes-age-archetype` and `firstcup-war-archetype`. These archetypes
-create Java EE 8 web applications that you will then edit and deploy.
+create Jakarta EE 8 web applications that you will then edit and deploy.
 
 Before you can create applications based on the archetypes, you must
 first install the archetypes and supporting projects to your local Maven
@@ -211,5 +211,5 @@ browser will load the URL of the `DukesAgeResource` path, and you'll see
 the returned `String` representing Duke's age.
 
 At this point, you've successfully created, deployed, and run your first
-Java EE application. Now you will create a web application that uses
+Jakarta EE application. Now you will create a web application that uses
 this web service data.

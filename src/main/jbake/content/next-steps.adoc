@@ -13,5 +13,5 @@ prev=web-application006.html
 ------------
 
 This chapter provides additional resources for learning more about
-enterprise application architecture, the Java EE platform, and GlassFish
+enterprise application architecture, the Jakarta EE platform, and GlassFish
 Server.
