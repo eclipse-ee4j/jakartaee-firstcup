@@ -46,7 +46,7 @@ Get the Jakarta EE 8 SDK
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 To get the Jakarta EE 8 SDK, go to
-`http://www.oracle.com/technetwork/java/jakartaee/downloads/`. Download and
+`http://www.oracle.com/technetwork/java/javaee/downloads/`. Download and
 install the SDK. The location where you install it is typically
 `glassfish5` in your home directory, but you can change this.
 
@@ -55,11 +55,11 @@ installation.
 
 [[GCRNU]][[install-the-netbeans-ide-distribution-for-java-ee]]
 
-Install the NetBeans IDE Distribution for Java EE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Install the Apache NetBeans IDE Distribution for Java EE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To get NetBeans IDE, go to `https://netbeans.org/downloads/` and
-download the Java EE distribution. Install this distribution.
+To get NetBeans IDE, go to `https://netbeans.apache.org/` and
+download the latest distribution. Install this distribution.
 
 [[GIOEW]][[add-glassfish-server-as-a-server-in-netbeans-ide]]
 
