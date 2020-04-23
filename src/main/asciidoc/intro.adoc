@@ -20,8 +20,8 @@ first:
 
 * link:#software-compatibility[See the software compatibility notice]
 * link:#get-the-jakarta-ee-8-sdk[Get the Jakarta EE 8 SDK]
-* link:#install-the-netbeans-ide-distribution-for-java-ee[Install the NetBeans IDE distribution for Java EE]
-* link:#add-glassfish-server-as-a-server-in-netbeans-ide[Add GlassFish Server as a server in NetBeans IDE]
+* link:#install-the-netbeans-ide-distribution-for-java-ee[Install the Apache NetBeans IDE distribution for Jakarta EE]
+* link:#add-glassfish-server-as-a-server-in-netbeans-ide[Add GlassFish Server as a server in Apache NetBeans IDE]
 ////
 * link:#get-the-latest-updates-to-this-tutorial[Get the latest updates to this tutorial]
 ////
@@ -34,9 +34,9 @@ This tutorial is compatible with the following software:
 [width="55%",cols="30%,60%"]
 |=======================================================================
 |*Software* |*Version*
-|link:http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java Development Kit (JDK)] | 8 update 144 (8u144) or greater
-|link:https://javaee.github.io/glassfish/[GlassFish Server] | 5.0 or greater
-|link:https://netbeans.org/[NetBeans IDE] | 8.2 or greater
+|link:https://adoptopenjdk.net/[Java Development Kit (JDK)] | 8 update 144 (8u144) or greater
+|link:https://eclipse-ee4j.github.io/glassfish/[GlassFish Server] | 5.1 or greater
+|link:https://netbeans.apache.org/[Apache NetBeans IDE] | 8.2 or greater
 |link:https://eclipse.org/ide/[Eclipse IDE] | 4.7.0 or greater
 
 |=======================================================================
@@ -45,7 +45,7 @@ This tutorial is compatible with the following software:
 ==== Get the Jakarta EE 8 SDK
 
 To get the Jakarta EE 8 SDK, go to
-`http://www.oracle.com/technetwork/java/jakartaee/downloads/`. Download and
+`https://eclipse-ee4j.github.io/glassfish/download/`. Download and
 install the SDK. The location where you install it is typically
 `glassfish5` in your home directory, but you can change this.
 
@@ -53,20 +53,20 @@ The tutorial is installed in the `docs/firstcup` directory of your SDK
 installation.
 
 [[install-the-netbeans-ide-distribution-for-java-ee]]
-==== Install the NetBeans IDE Distribution for Java EE
+==== Install the Apache NetBeans IDE Distribution for Jakarta EE
 
-To get NetBeans IDE, go to `https://netbeans.org/downloads/` and
-download the Java EE distribution. Install this distribution.
+To get Apache NetBeans IDE, go to `https://netbeans.apache.org/download/` and
+download the Jakarta EE distribution. Install this distribution.
 
 [[add-glassfish-server-as-a-server-in-netbeans-ide]]
-==== Add GlassFish Server as a Server in NetBeans IDE
+==== Add GlassFish Server as a Server in Apache NetBeans IDE
 
 Once you have all the necessary downloads, you must configure NetBeans
 IDE and get the latest tutorial updates.
 
-To run this tutorial in NetBeans IDE, you must register your GlassFish
+To run this tutorial in Apache NetBeans IDE, you must register your GlassFish
 Server installation as a NetBeans server instance. Follow these
-instructions to register the GlassFish Server in NetBeans IDE.
+instructions to register the GlassFish Server in Apache NetBeans IDE.
 
 1.  From the *Tools* menu, select *Servers*.
 2.  In the Servers dialog, click *Add Server*.

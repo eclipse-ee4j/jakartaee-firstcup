@@ -1,8 +1,8 @@
 [[preface]]
 == Preface
 
-This is Your First Cup: An Introduction to Jakarta Platform, Enterprise
-Edition, a short tutorial for beginning Jakarta EE programmers. This
+This is Your First Cup: An Introduction to Jakarta EE Platform,
+a short tutorial for beginning Jakarta EE programmers. This
 tutorial is designed to give you a hands-on lesson on developing an
 enterprise application from initial coding to deployment.
 
@@ -31,9 +31,9 @@ Before you start this tutorial, you should:
 The following books and projects may be helpful to you in understanding
 this tutorial:
 
-* The https://javaee.github.io/tutorial[Jakarta EE Tutorial]
-* The GlassFish Server Open Source Edition documentation set
-* The NetBeans IDE documentation
+* The https://eclipse-ee4j.github.io/jakartaee-tutorial/[Jakarta EE Tutorial]
+* The GlassFish documentation set
+* The Apache NetBeans IDE documentation
 
 [[conventions]]
 === Conventions

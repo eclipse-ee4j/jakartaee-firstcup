@@ -1,5 +1,5 @@
 [[understanding-jakarta-platform-enterprise-edition]]
-== Understanding Jakarta Platform, Enterprise Edition
+== Understanding Jakarta EE Platform
 
 This chapter describes the basic concepts behind enterprise application
 development and examines how an application server is the sum of its
@@ -78,7 +78,7 @@ Table 2-1 Web-Tier Jakarta EE Technologies
 [width="80%",cols="25%,74%"]
 |=======================================================================
 |*Technology* |*Purpose*
-|JavaServer Faces technology |A user interface component framework for
+|Jakarta Server Faces technology |A user interface component framework for
 web applications that allows you to include UI components (such as
 fields and buttons) on a XHTML page, called a Facelets page; convert and
 validate UI component data; save UI component data to server-side data
@@ -90,7 +90,7 @@ refer to Jakarta EE components
 |Servlets |Java programming language classes that dynamically process
 requests and construct responses, usually for HTML pages
 
-|Contexts and Dependency Injection for Java EE |A set of contextual
+|Jakarta Contexts and Dependency Injection |A set of contextual
 services that make it easy for developers to use enterprise beans along
 with JavaServer Faces technology in web applications
 |=======================================================================
@@ -108,9 +108,9 @@ functionality exists in the business tier components.
 The following Jakarta EE technologies are among those that are used in the
 business tier in Jakarta EE applications:
 
-* Enterprise JavaBeans (enterprise bean) components
-* JAX-RS RESTful web services
-* Java Persistence API entities
+* Jakarta Enterprise Beans components
+* Jakarta RESTful Web Services
+* Jakarta Persistence entities
 
 [[the-enterprise-information-systems-tier]]
 ===== The Enterprise Information Systems Tier
@@ -125,9 +125,9 @@ The following Jakarta EE technologies are used to access the EIS tier in
 Jakarta EE applications:
 
 * The Java Database Connectivity API (JDBC)
-* The Java Persistence API
-* The Jakarta EE Connector Architecture
-* The Java Transaction API (JTA)
+* Jakarta Persistence
+* Jakarta Connectors
+* Jakarta Transactions
 
 [[jakarta-ee-servers-and-containers]]
 ==== Jakarta EE Servers and Containers
@@ -150,22 +150,21 @@ the different component types to work together to provide functionality
 in an enterprise application.
 
 [[the-web-container]]
-
 ==== The Web Container
 
 The web container is the interface between web components and the web
-server. A web component can be a servlet or a JavaServer Faces Facelets
+server. A web component can be a servlet or a Jakarta Server Faces Facelets
 page. The container manages the component's life cycle, dispatches
 requests to application components, and provides interfaces to context
 data, such as information about the current request.
 
 [[the-ejb-container]]
 
-==== The EJB Container
+==== The enterprise bean Container
 
-The EJB container is the interface between enterprise beans, which
+The enterprise bean container is the interface between enterprise beans, which
 provide the business logic in a Jakarta EE application, and the Jakarta EE
-server. The EJB container runs on the Jakarta EE server and manages the
+server. The enterprise bean container runs on the Jakarta EE server and manages the
 execution of an application's enterprise beans.
 
 [[the-application-client-container]]

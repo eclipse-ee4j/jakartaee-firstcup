@@ -9,7 +9,7 @@ service example application.
 === Architecture of the Example Applications
 
 The example applications consist of four main components:
-`DukesAgeResource`, a JAX-RS RESTful web service; `DukesBirthdayBean`,
+`DukesAgeResource`, a Jakarta RESTful web service; `DukesBirthdayBean`,
 an enterprise bean; `FirstcupUser`, a Java Persistence API entity; and
 `firstcup-war`, a web application created with JavaServer Faces Facelets
 technology.
@@ -20,7 +20,7 @@ technology.
 image:firstcup-architecture.png[
 "Architecture of First Cup example applications."]
 
-`DukesAgeResource` is a JAX-RS resource that calculates the age of Duke,
+`DukesAgeResource` is a Jakarta REST resource that calculates the age of Duke,
 the Java mascot. Duke was born May 23, 1995, when the first demo of Java
 technology was publicly released.
 
@@ -28,11 +28,11 @@ technology was publicly released.
 that calculates the difference between the user's age and Duke's age and
 stores the user-submitted data in a Java Persistence API entity.
 
-`FirstcupUser` is a Java Persistence API entity that represents a
+`FirstcupUser` is a Jakarta Persistence entity that represents a
 particular user's birthday. It is stored in an Apache Derby table and
 managed by the `DukesBirthdayBean` business methods.
 
-The `firstcup-war` web application is a JavaServer Faces Facelets
+The `firstcup-war` web application is a Jakarta Server Faces Facelets
 application that accesses `DukesAgeResource` to display Duke's age,
 reads in a date provided by the user, accesses `DukesBirthdayBean` to
 calculate who is older, and then displays the difference in years
@@ -49,7 +49,7 @@ whether he or she is older or younger than Duke, based on the date the
 user entered in the `greeting.xhtml` page, and displays the average age
 difference of all users.
 * `DukesBDay.java`: A CDI managed bean that defines properties to hold
-the user's birth date, uses the JAX-RS Client API to get Duke's current
+the user's birth date, uses the Jakarta REST Client API to get Duke's current
 age from the `DukesAgeResource` web service, and calculates the age
 difference between the user and Duke from the enterprise bean.
 * `web.xml`: The web application's deployment descriptor, which is used
@@ -82,19 +82,19 @@ through the web tier.
 [[jakarta-ee-technologies-used-in-the-example-applications]]
 ==== Jakarta EE Technologies Used in the Example Applications
 
-The `DukesAgeResource` web service is a JAX-RS resource. The
+The `DukesAgeResource` web service is a Jakarta REST resource. The
 `DukesBirthdayBean` enterprise bean is a stateless session bean. The
-`FirstcupUser` entity is a Java Persistence API entity. The `DukesBDay`
-CDI managed bean uses the JAX-RS client API to access the
+`FirstcupUser` entity is a Jakarta Persistence entity. The `DukesBDay`
+CDI managed bean uses the Jakarta REST client API to access the
 `DukesAgeResource` web service. The `firstcup-war` web client is a
-JavaServer Faces application that runs in the web container of the Java
+JavaServer Faces application that runs in the web container of the Jakarta
 EE server.
 
 [[coding-the-dukes-age-example-application]]
 === Coding the dukes-age Example Application
 
 This section describes how to code the `dukes-age` example application,
-a web application containing a JAX-RS RESTful web service endpoint.
+a web application containing a Jakarta RESTful web service endpoint.
 
 [[getting-started]]
 ==== Getting Started
@@ -102,7 +102,7 @@ a web application containing a JAX-RS RESTful web service endpoint.
 Before you start coding the example, you need to perform some
 configuration tasks:
 
-1.  Register the server with your NetBeans IDE as described in
+1.  Register the server with your Apache NetBeans IDE as described in
 link:intro002.html#GIOEW[Add GlassFish Server as a Server in NetBeans
 IDE].
 2.  Install the Maven archetypes used to create the example
@@ -120,7 +120,7 @@ Before you can create applications based on the archetypes, you must
 first install the archetypes and supporting projects to your local Maven
 repository by following these steps:
 
-1.  In NetBeans IDE select *File*, then *Open Project*, navigate to the
+1.  In Apache NetBeans IDE select *File*, then *Open Project*, navigate to the
 location where you installed the tutorial (usually
 `glassfish5/docs/firstcup`), select `example`, deselect the *Open
 Required Projects* check box, and click *Open Project*.
@@ -154,9 +154,9 @@ client. The `dukes-age` web application could be deployed on a completely differ
 without affecting the functionality of the `firstcup-war` web client.
 
 [[jax-rs-resources]]
-===== JAX-RS Resources
+===== Jakarta REST Resources
 
-The `DukesAgeResource` class is a JAX-RS resource class that responds to HTTP GET
+The `DukesAgeResource` class is a Jakarta REST resource class that responds to HTTP GET
 requests and returns a `String` representing the age of Duke at the time
 of the request.
 
@@ -176,7 +176,7 @@ MIME-type is `text/plain`.
 In NetBeans IDE, create a new web project using the
 `dukes-age-archetype` Maven archetype.
 
-Create the Project in NetBeans IDE 
+Create the Project in Apache NetBeans IDE 
 
 1.  From the *File* menu, select *New Project*.
 2.  Under *Categories*, select *Maven*.
@@ -269,7 +269,7 @@ the contents of the server log.
 [[building-and-deploying-the-web-service-endpoint]]
 ===== Building and Deploying the Web Service Endpoint
 
-Build `dukes-age.war`, the JAX-RS web application, and deploy it to your
+Build `dukes-age.war`, the Jakarta REST web application, and deploy it to your
 GlassFish Server instance.
 
 In the *Projects* tab, right-click `dukes-age` and select *Run*.
