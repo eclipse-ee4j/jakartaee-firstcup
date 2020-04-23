@@ -1,16 +1,19 @@
-type=page
-status=published
-title=Prerequisite Tasks for Completing This Tutorial
-next=jakarta-ee.html
-prev=intro001.html
-~~~~~~
-= Prerequisite Tasks for Completing This Tutorial
+== Introduction
 
+This chapter outlines the goals and the prerequisites for completing
+this tutorial.
 
-[[GCQZL]][[prerequisite-tasks-for-completing-this-tutorial]]
+=== Goals of This Tutorial
 
-Prerequisite Tasks for Completing This Tutorial
------------------------------------------------
+At the completion of this tutorial, you will:
+
+* Understand the basics of tiered applications
+* Understand the basics of the Jakarta EE platform
+* Have created a multitiered Jakarta EE application
+* Have deployed and run your application on a Jakarta EE server
+* Know where to go next for more information on the Jakarta EE platform
+
+=== Prerequisite Tasks for Completing This Tutorial
 
 To complete this tutorial, you need to complete the following tasks
 first:
@@ -24,9 +27,7 @@ first:
 ////
 
 [[software-compatibility]]
-
-Software Compatibility Notice
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==== Software Compatibility Notice
 
 This tutorial is compatible with the following software:
 
@@ -40,10 +41,8 @@ This tutorial is compatible with the following software:
 
 |=======================================================================
 
-[[GCRNX]][[get-the-jakarta-ee-8-sdk]]
-
-Get the Jakarta EE 8 SDK
-~~~~~~~~~~~~~~~~~~~~~~~~
+[[get-the-jakarta-ee-8-sdk]]
+==== Get the Jakarta EE 8 SDK
 
 To get the Jakarta EE 8 SDK, go to
 `http://www.oracle.com/technetwork/java/jakartaee/downloads/`. Download and
@@ -53,18 +52,14 @@ install the SDK. The location where you install it is typically
 The tutorial is installed in the `docs/firstcup` directory of your SDK
 installation.
 
-[[GCRNU]][[install-the-netbeans-ide-distribution-for-java-ee]]
-
-Install the NetBeans IDE Distribution for Java EE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[install-the-netbeans-ide-distribution-for-java-ee]]
+==== Install the NetBeans IDE Distribution for Java EE
 
 To get NetBeans IDE, go to `https://netbeans.org/downloads/` and
 download the Java EE distribution. Install this distribution.
 
-[[GIOEW]][[add-glassfish-server-as-a-server-in-netbeans-ide]]
-
-Add GlassFish Server as a Server in NetBeans IDE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[add-glassfish-server-as-a-server-in-netbeans-ide]]
+==== Add GlassFish Server as a Server in NetBeans IDE
 
 Once you have all the necessary downloads, you must configure NetBeans
 IDE and get the latest tutorial updates.
@@ -81,24 +76,3 @@ GlassFish Server installation.
 5.  Click *Next*.
 6.  Under *Domain Location*, select the default domain, `domain1`.
 7.  Click *Finish*.
-
-////
-[[GIMVN]][[get-the-latest-updates-to-this-tutorial]]
-
-Get the Latest Updates to this Tutorial
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Check for any updates to this tutorial by using the Update Center
-included with the Jakarta EE 8 SDK.
-
-1.  In NetBeans IDE, select the *Services* tab and expand the *Servers*
-node.
-2.  Right-click the GlassFish Server instance and select *View Domain
-Update Center* to display the Update Tool.
-3.  In the tree, select *Available Updates* to display a list of updated
-packages.
-4.  Look for updates to the First Cup for Jakarta EE 8
-(`jakartaee-firstcup-tutorial`) package.
-5.  If there is an updated version, select First Cup for Jakarta EE 8
-(`jakartaee-firstcup-tutorial`) and click *Install*.
-////

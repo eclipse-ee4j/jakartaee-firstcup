@@ -1,0 +1,24 @@
+[[next-steps]]
+== Next Steps
+
+This chapter provides additional resources for learning more about
+enterprise application architecture, the Jakarta EE platform, and GlassFish
+Server.
+
+
+[[the-jakarta-ee-tutorial]]
+=== The Jakarta EE Tutorial
+
+The https://javaee.github.io/tutorial[Jakarta EE Tutorial] documents the
+technologies that make up the Jakarta EE platform. The Jakarta EE Tutorial
+describes each piece of the platform in detail, and includes code
+examples that demonstrate how to use each piece of the platform.
+
+[[more-information-on-the-jakarta-ee-platform]]
+=== More Information on the Jakarta EE Platform
+
+For more information on the Jakarta EE platform, see these resources:
+
+* The GlassFish project (`https://javaee.github.io/glassfish/`)
+* The Aquarium (`http://blogs.oracle.com/theaquarium/`), a blog about
+GlassFish Server and open-source Jakarta EE projects

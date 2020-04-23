@@ -1,16 +1,12 @@
-type=page
-status=published
-title=Overview of Enterprise Applications
-next=jakarta-ee002.html
-prev=jakarta-ee.html
-~~~~~~
-= Overview of Enterprise Applications
+[[understanding-jakarta-platform-enterprise-edition]]
+== Understanding Jakarta Platform, Enterprise Edition
 
+This chapter describes the basic concepts behind enterprise application
+development and examines how an application server is the sum of its
+Jakarta EE containers.
 
-[[GCRKY]][[overview-of-enterprise-applications]]
-
-Overview of Enterprise Applications
------------------------------------
+[[overview-of-enterprise-applications]]
+=== Overview of Enterprise Applications
 
 This section describes enterprise applications and how they are designed
 and developed.
@@ -31,10 +27,8 @@ platform reduces the complexity of enterprise application development by
 providing a development model, API, and runtime environment that allow
 developers to concentrate on functionality.
 
-[[GCRKR]][[tiered-applications]]
-
-Tiered Applications
-~~~~~~~~~~~~~~~~~~~
+[[tiered-applications]]
+==== Tiered Applications
 
 In a multitiered application, the functionality of the application is
 separated into isolated functional areas, called tiers. Typically,
@@ -48,10 +42,8 @@ a permanent data store in the data tier.
 Jakarta EE application development concentrates on the middle tier to make
 enterprise application management easier, more robust, and more secure.
 
-[[GCRLA]][[the-client-tier]]
-
-The Client Tier
-^^^^^^^^^^^^^^^
+[[the-client-tier]]
+===== The Client Tier
 
 The client tier consists of application clients that access a Jakarta EE
 server and that are usually located on a different machine from the
@@ -62,10 +54,8 @@ or even often, Java applications. Clients can be a web browser, a
 standalone application, or other servers, and they run on a different
 machine from the Jakarta EE server.
 
-[[GCRNL]][[the-web-tier]]
-
-The Web Tier
-^^^^^^^^^^^^
+[[the-web-tier]]
+===== The Web Tier
 
 The web tier consists of components that handle the interaction between
 clients and the business tier. Its primary tasks are the following:
@@ -81,7 +71,7 @@ beans
 link:#GCTOG[Table 2-1] lists some of the main Jakarta EE technologies that
 are used in the web tier in Jakarta EE applications.
 
-[[sthref6]][[GCTOG]]
+[[GCTOG]]
 
 Table 2-1 Web-Tier Jakarta EE Technologies
 
@@ -106,10 +96,8 @@ with JavaServer Faces technology in web applications
 |=======================================================================
 
 
-[[GCRLS]][[the-business-tier]]
-
-The Business Tier
-^^^^^^^^^^^^^^^^^
+[[the-business-tier]]
+===== The Business Tier
 
 The business tier consists of components that provide the business logic
 for an application. Business logic is code that provides functionality
@@ -124,10 +112,8 @@ business tier in Jakarta EE applications:
 * JAX-RS RESTful web services
 * Java Persistence API entities
 
-[[GCRKW]][[the-enterprise-information-systems-tier]]
-
-The Enterprise Information Systems Tier
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[[the-enterprise-information-systems-tier]]
+===== The Enterprise Information Systems Tier
 
 The enterprise information systems (EIS) tier consists of database
 servers, enterprise resource planning systems, and other legacy data
@@ -142,3 +128,53 @@ Jakarta EE applications:
 * The Java Persistence API
 * The Jakarta EE Connector Architecture
 * The Java Transaction API (JTA)
+
+[[jakarta-ee-servers-and-containers]]
+==== Jakarta EE Servers and Containers
+
+A Jakarta EE server is a server application that implements the Jakarta EE
+platform APIs and provides standard Jakarta EE services. Jakarta EE servers
+are sometimes called application servers, because they allow you to
+serve application data to clients, much as web servers serve web pages
+to web browsers.
+
+Jakarta EE servers host several application component types that correspond
+to the tiers in a multitiered application. The Jakarta EE server provides
+services to these components in the form of a container.
+
+Jakarta EE containers are the interface between the component and the
+lower-level functionality provided by the platform to support that
+component. The functionality of the container is defined by the platform
+and is different for each component type. Nonetheless, the server allows
+the different component types to work together to provide functionality
+in an enterprise application.
+
+[[the-web-container]]
+
+==== The Web Container
+
+The web container is the interface between web components and the web
+server. A web component can be a servlet or a JavaServer Faces Facelets
+page. The container manages the component's life cycle, dispatches
+requests to application components, and provides interfaces to context
+data, such as information about the current request.
+
+[[the-ejb-container]]
+
+==== The EJB Container
+
+The EJB container is the interface between enterprise beans, which
+provide the business logic in a Jakarta EE application, and the Jakarta EE
+server. The EJB container runs on the Jakarta EE server and manages the
+execution of an application's enterprise beans.
+
+[[the-application-client-container]]
+
+==== The Application Client Container
+
+The application client container is the interface between Jakarta EE
+application clients (special Java SE applications that use Jakarta EE
+server components) and the Jakarta EE server. The application client
+container runs on the client machine and is the gateway between the
+client application and the Jakarta EE server components that the client
+uses.
