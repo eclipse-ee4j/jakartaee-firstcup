@@ -1,15 +1,5 @@
-type=page
-status=published
-title=Jakarta Enterprise Edition Your First Cup: An Introduction to Jakarta EE, Release 8
-next=preface.html
-prev=toc.html
-~~~~~~
-= Jakarta Enterprise Edition Your First Cup: An Introduction to Jakarta EE, Release 8
-
-
 [[java-platform-enterprise-edition]]
-Jakarta Enterprise Edition
---------------------------
+== Jakarta EE Your First Cup: An Introduction to Jakarta EE, Release 8
 
 Your First Cup: An Introduction to Jakarta EE
 
@@ -17,11 +7,9 @@ Release 8
 
 Contributed 2018, 2019
 
-[[sthref1]]
-
 '''''
 
-Jakarta Enterprise Edition Your First Cup: An Introduction to
+Jakarta EE Your First Cup: An Introduction to
 Jakarta EE, Release 8
 
 

@@ -1,0 +1,76 @@
+== Introduction
+
+This chapter outlines the goals and the prerequisites for completing
+this tutorial.
+
+=== Goals of This Tutorial
+
+At the completion of this tutorial, you will:
+
+* Understand the basics of tiered applications
+* Understand the basics of the Jakarta EE platform
+* Have created a multitiered Jakarta EE application
+* Have deployed and run your application on a Jakarta EE server
+* Know where to go next for more information on the Jakarta EE platform
+
+=== Prerequisite Tasks for Completing This Tutorial
+
+To complete this tutorial, you need to complete the following tasks
+first:
+
+* link:#software-compatibility[See the software compatibility notice]
+* link:#get-the-jakarta-ee-8-sdk[Get the Jakarta EE 8 SDK]
+* link:#install-the-netbeans-ide-distribution-for-java-ee[Install the Apache NetBeans IDE distribution for Jakarta EE]
+* link:#add-glassfish-server-as-a-server-in-netbeans-ide[Add GlassFish Server as a server in Apache NetBeans IDE]
+
+[[software-compatibility]]
+==== Software Compatibility Notice
+
+This tutorial is compatible with the following software:
+
+[cols="30%,70%"]
+|=======================================================================
+|*Software* |*Version*
+|link:https://adoptopenjdk.net/[Java Development Kit (JDK)] | 8 update 144 (8u144) or greater
+|link:https://eclipse-ee4j.github.io/glassfish/[GlassFish Server] | 5.1 or greater
+|link:https://github.com/eclipse-ee4j/jakartaee-firstcup-examples/[Fist Cup Examples] | Git repository
+|link:https://netbeans.apache.org/[Apache NetBeans IDE] | 8.2 or greater
+|link:https://eclipse.org/ide/[Eclipse IDE] | 4.7.0 or greater
+
+|=======================================================================
+
+[[get-the-jakarta-ee-8-sdk]]
+==== Get the Jakarta EE 8 SDK
+
+To get GlassFish, go to
+`https://eclipse-ee4j.github.io/glassfish/download`. Download and
+install the SDK. The location where you install it is typically
+`glassfish5` in your home directory, but you can change this.
+
+You need to download the code from this tutorial separately, from its Git
+repository, at `https://github.com/eclipse-ee4j/jakartaee-firstcup-examples/`
+
+[[install-the-netbeans-ide-distribution-for-java-ee]]
+==== Install the Apache NetBeans IDE Distribution for Jakarta EE
+
+To get Apache NetBeans IDE, go to `https://netbeans.apache.org/download/` and
+download the Jakarta EE distribution. Install this distribution.
+
+[[add-glassfish-server-as-a-server-in-netbeans-ide]]
+==== Add GlassFish Server as a Server in Apache NetBeans IDE
+
+Once you have all the necessary downloads, you must configure NetBeans
+IDE and get the latest tutorial updates.
+
+To run this tutorial in Apache NetBeans IDE, you must register your GlassFish
+Server installation as a NetBeans server instance. Follow these
+instructions to register the GlassFish Server in Apache NetBeans IDE.
+
+1.  From the *Tools* menu, select *Servers*.
+2.  In the Servers dialog, click *Add Server*.
+3.  Under *Choose Server*, select *GlassFish Server* and click *Next*.
+4.  Under *Server Location*, browse to or enter the location of your
+GlassFish Server installation.
+5.  Click *Next*.
+6.  Under *Domain Location*, select the default domain, `domain1`.
+7.  Click *Finish*.

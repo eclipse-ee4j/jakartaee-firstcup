@@ -1,0 +1,731 @@
+[[creating-your-second-web-application]]
+== Creating Your Second Web Application
+
+This chapter gives step-by-step instructions on coding and running the
+`firstcup-war` web application, which uses the `dukes-age` web service
+described in link:#creating-your-first-jakarta-ee-application["Creating Your
+First Jakarta EE Application" chapter]. The `firstcup-war` web application is a
+more complicated application that uses several different Jakarta EE APIs.
+
+[[the-firstcup-war-project]]
+=== The firstcup-war Project
+
+The `firstcup-war` web application project consists of the Jakarta
+Persistence entity, the enterprise bean, and the Jakarta Server Faces
+web front end.
+
+The `firstcup-war` example application consumes the data from the
+`dukes-age` web service using the Jakarta REST client API. A Jakarta Server Faces
+web front end asks users to enter their birthdays to find out who is
+older, the user or Duke. This data is stored in an Apache Derby database table
+using Jakarta Persistence. The business logic, which provides the
+core functionality of the application, is handled by an enterprise bean.
+
+All the tiers described in link:#tiered-applications[Tiered
+Applications] are present in the `firstcup-war` web application. The web
+or client tier is the Jakarta Server Faces front end. The enterprise
+information systems, or EIS, tier is the Derby database. The business
+tier is the enterprise bean.
+
+[[creating-the-web-application-project-using-the-archetype]]
+=== Creating the Web Application Project Using the Archetype
+
+Follow these steps to create a new web application project using the
+`firstcup-war-archetype` in Apache NetBeans IDE.
+
+1.  From the *File* menu, select *New Project*.
+2.  Under *Projects*, select *Project from Archetype*.
+3.  Click *Next*.
+4.  In the *Search* field, enter `firstcup`.
+5.  In the *Known Archetypes* field, select `firstcup-war-archetype`.
+6.  Click *Next*.
+7.  In the *Project Name* field, enter `firstcup-war`.
+8.  In the *Package* field, enter `firstcup`.
+9.  Click *Finish*.
++
+You should now see the module you created in the *Projects* tab.
+
+The `firstcup-war-archetype` archetype creates the structure of the web
+application, including the following:
+
+* Basic entity classes
+* Basic enterprise bean classes
+* Basic backing bean classes
+* Basic Facelets XHTML components and views
+* The `web.xml`, `faces-config.xml`, and `persistence.xml` deployment
+descriptors
+
+After you create the basic application structure with the archetype, you
+will configure how the application will run, implement the functionality
+of the classes, implement the Facelets views, and then deploy the
+application.
+
+[[modifying-the-java-persistence-api-entity]]
+=== Modifying Jakarta Persistence Entity
+
+Jakarta Persistence allows you to create and use Java programming
+language classes that represent data in a database table. A Java
+Persistence API _entity_ is a lightweight, persistent Java programming
+language object that represents data in a data store. To create or
+modify entities, or to remove them from the data store, call the
+operations of Jakarta Persistence _entity manager_. To query
+entities, or to query the data encapsulated by the persistent fields or
+properties of a entity, use the Jakarta Persistence Query Language (JPQL),
+a language similar to SQL that operates on entities.
+
+In `firstcup-war`, there is a single entity that defines one query.
+
+[[edit-the-constructor-of-the-firstcupuser-entity]]
+==== Edit the Constructor of the FirstcupUser Entity
+
+Add code to the constructor for `FirstcupUser`.
+
+1.  Expand the *Source Packages* node, expand the `firstcup.entity` node,
+then double-click the `FirstcupUser.java` file to open it in the editor
+window.
+2.  Below the field definitions in the `FirstcupUser` class, add the
+following code in bold to the second, two-argument constructor:
++
+[source,java]
+----
+public FirstcupUser(Date date, int difference) {
+    Calendar cal = new GregorianCalendar();
+    cal.setTime(date);
+    birthday = cal;
+    ageDifference = difference;
+}
+----
+3.  Right-click in the editor window and select *Format*.
+
+[[add-a-named-query-to-the-firstcupuser-entity]]
+==== Add a Named Query to the FirstcupUser Entity
+
+Add a JPQL named query to the `FirstcupUser` entity that returns the
+average age difference of all `firstcup-war` users.
+
+This query uses the `AVG` aggregate function to return the average of
+all the values of the `ageDifference` property of the `FirstcupUser`
+entities.
+
+1.  Directly before the class definition, copy and paste in the
+following code:
++
+[source,java]
+----
+@NamedQuery(name="findAverageAgeDifferenceOfAllFirstcupUsers",
+query="SELECT AVG(u.ageDifference) FROM FirstcupUser u")
+----
++
+The `@NamedQuery` annotation appears just before the class definition of
+the entity and has two required attributes: `name`, with the unique name
+for this query; and `query`, the JPQL query definition.
+2.  Right-click in the editor window and select *Format*.
+3.  From the *File* menu, select *Save*.
+
+[[modifying-the-enterprise-bean]]
+=== Modifying the Enterprise Bean
+
+`DukesBirthdayBean` is a _stateless session bean_. Stateless session beans
+are enterprise beans that do not maintain a conversational state with a
+client. With stateless session beans, the client makes isolated requests
+that do not depend on any previous state or requests. If an application
+requires conversational state, use _stateful session beans_.
+
+`DukesBirthdayBean` is a local enterprise bean that uses a no-interface
+view:
+
+* A _local enterprise bean_ is visible only within the application in
+which it is deployed.
+* Enterprise beans with a _no-interface_ view do not need a separate
+business interface that the enterprise bean class implements. The
+enterprise bean class is the only coding artifact needed to create a
+local, no-interface enterprise bean.
+
+`DukesBirthdayBean` will be packaged within the same WAR file as the
+Facelets web front end.
+
+[[implement-a-business-method-to-dukesbirthdaybean-that-gets-the-average-age-difference-of-firstcup-war-users]]
+==== Implement a Business Method to DukesBirthdayBean that Gets the Average Age Difference of firstcup-war Users
+
+Add code to a business method to the `DukesBirthdayBean` session bean to
+call the `findAverageAgeDifferenceOfAllFirstcupUsers` named query in
+`FirstcupUser` that returns the average age difference of all users.
+
+1.  Expand the *Source Packages* node, expand the `firstcup.ejb` node,
+then double-click the `DukesBirthdayBean.java` file to open it in the
+editor window.
+2.  Find the business method called `getAverageAgeDifference` and add
+the following code in bold by copying and pasting:
++
+[source,java]
+----
+public Double getAverageAgeDifference() {
+    *Double avgAgeDiff = (Double)
+    em.createNamedQuery("findAverageAgeDifferenceOfAllFirstcupUsers")
+        .getSingleResult();
+    logger.log(Level.INFO, "Average age difference is: {0}",  avgAgeDiff);
+    return avgAgeDiff;*
+}
+----
++
+The named query in `FirstcupUser` is called by using the `createNamedQuery` method
+in `EntityManager`. Because this query returns
+a single number, the `getSingleResult` method is called on the returned
+`Query` object. The query returns a `Double`.
+3.  Right-click in the editor window and select *Format*.
+
+[[implement-a-business-method-for-calculating-the-age-difference-between-duke-and-the-user]]
+==== Implement a Business Method for Calculating the Age Difference Between Duke and the User
+
+Add code to a business method that calculates the difference in age in
+years between Duke and the user and creates a new `FirstcupUser` entity.
+
+1.  Find the `getAgeDifference` business method and add the following
+code in bold:
++
+[source,java]
+----
+public int getAgeDifference(Date date) {
+    int ageDifference;
+
+    Calendar theirBirthday = new GregorianCalendar();
+    Calendar dukesBirthday = new GregorianCalendar(1995, Calendar.MAY, 23);
+
+    // Set the Calendar object to the passed-in Date
+    theirBirthday.setTime(date);
+
+    // Subtract the user's age from Duke's age
+    ageDifference = dukesBirthday.get(Calendar.YEAR) - theirBirthday.get(Calendar.YEAR);
+    logger.log(Level.INFO, "Raw ageDifference is: {0}",  ageDifference);
+    // Check to see if Duke's birthday occurs before the user's. If so,
+    // subtract one from the age difference
+    if (dukesBirthday.before(theirBirthday) && (ageDifference> 0)) {
+        ageDifference--;
+    }
+
+    // Create and store the user's birthday in the database
+    FirstcupUser user = new FirstcupUser(date, ageDifference);
+    em.persist(user);
+
+    logger.log(Level.INFO, "Final ageDifference is: {0}",  ageDifference);
+
+    return ageDifference;
+}
+----
++
+This method creates the `Calendar` objects used to calculate the
+difference in age between the user and Duke and performs the actual
+calculation of the difference in age.
++
+Similar to the `DukesAgeResource.getText` code, `getAgeDifference`
+subtracts Duke's birthday year from the user's birthday year to get a
+raw age difference. If Duke's birthday falls before the user's, and the
+raw difference is more than 0, it subtracts one year from the age
+difference.
++
+A new `FirstcupUser` entity is created with the user's birthday and age
+difference, then stored in Derby by calling the `persist` method
+in `EntityManager`.
++
+The final age difference is returned as an `int`.
+2.  Right-click in the editor window and select *Format*.
+3.  From the *File* menu, choose *Save*.
+
+[[modifying-the-web-client]]
+=== Modifying the Web Client
+
+To add the correct functionality to the web client, you need to perform
+the following tasks:
+
+* Modify the `DukesBDay` managed bean class
+* Modify the Facelets pages
+
+[[modify-the-dukesbday-managed-bean-class]]
+==== Modify the DukesBDay Managed Bean Class
+
+`DukesBDay` is a CDI managed bean that acts as a backing bean. A managed
+bean is a lightweight container-managed object that supports a set of
+basic services. A backing bean is a managed bean that provides temporary
+data storage for the values of the components included on a particular
+Jakarta Server Faces page. The Jakarta Server Faces application instantiates the
+managed bean and stores it in scope. The section following this one
+describes more about managed beans and how to configure them.
+
+This section describes how to modify the `DukesBDay` class.
+
+[[call-the-dukes-age-web-service-to-retrieve-dukes-current-age]]
+===== Call the dukes-age Web Service to Retrieve Duke's Current Age
+
+Now modify the `getAge` method of `DukesBDay` to call the `dukes-age`
+web service using the Jakarta REST Client API. This will retrieve Duke's
+current age, so it can be compared to the user's age.
+
+1.  Expand the *Source Packages* node, expand the `firstcup.web` node,
+then double-click the `DukesBDay.java` file to open it in the editor
+window.
+2.  Find the `getAge` method and implement its functionality by copying
+and pasting the following code in bold:
++
+[source,java]
+----
+public int getAge() {
+    try {
+        Client client = ClientBuilder.newClient();
+        WebTarget target = client.target("http://localhost:8080/dukes-age/webapi/dukesAge");
+        String response = target.request().get(String.class);
+        age = Integer.parseInt(response);
+    } catch (IllegalArgumentException | NullPointerException | WebApplicationException ex) {
+        logger.severe("processing of HTTP response failed");
+    }
+    return age;
+}
+----
+3.  In the editor window, right-click and select *Format*.
+4.  From the *File* menu, select *Save*.
+
+[[get-the-age-difference-from-the-dukesbirthdaybean-enterprise-bean]]
+===== Get the Age Difference from the DukesBirthdayBean Enterprise Bean
+
+Now modify the `processBirthday` method to get the difference in age
+between the user's age and Duke's age from the `DukesBirthdayBean` enterprise bean,
+set the `absAgeDiff` variable to the absolute value of the age
+difference, and set a result string that will forward the user to the
+display page.
+
+1.  Find the `processBirthday` method and implement the functionality by
+copying and pasting the following code in bold:
++
+[source,java]
+----
+public String processBirthday() {
+    this.setAgeDiff(dukesBirthdayBean.getAgeDifference(yourBD));
+    logger.log(Level.INFO, "age diff from dukesbday {0}", ageDiff);
+    this.setAbsAgeDiff(Math.abs(this.getAgeDiff()));
+    logger.log(Level.INFO, "absAgeDiff {0}", absAgeDiff);
+    this.setAverageAgeDifference(dukesBirthdayBean.getAverageAgeDifference());
+    logger.log(Level.INFO, "averageAgeDifference {0}", averageAgeDifference);
+    return "/response.xhtml";
+}
+----
++
+This method calls the `getAgeDifference` method of `DukesBirthdayBean`
+to get the age difference and store it in the `ageDiff` property, sets
+the absolute age difference stored in the `absAgeDiff` property, and
+sets the average age difference stored in the `averageAgeDifference`
+property. It returns the relative URL of the response page to which the
+user will be forwarded.
+2.  In the editor window, right-click and select *Format*.
+3.  From the *File* menu, select *Save*.
+
+[[creating-the-facelets-client]]
+==== Creating the Facelets Client
+
+The Facelets client consists of a _resource library_, a _composite
+component_, and two XHTML files.
+
+[[resource-libraries-in-firstcup-war]]
+===== Resource Libraries in firstcup-war
+
+A Jakarta Server Faces resource library is a collection of user-created
+components collected in a standard location in a web application.
+Resource libraries are identified according to a _resource identifier_, a
+string that represents a particular resource within a web application.
+Resources can be packaged either at the root of the web application or
+on the web application's classpath.
+
+A resource packaged in the web application root must be in a
+subdirectory of a `resources` directory at the web application root.
+
+[source]
+----
+resources/_resource-identifier_
+----
+
+A resource packaged in the web application classpath must be in a
+subdirectory of the `META-INF/resources` directory within a web
+application.
+
+[source]
+----
+META-INF/resources/_resource-identifier_
+----
+
+Resource identifiers are unique strings that conform to the following
+format:
+
+[source]
+----
+[_locale-prefix_/][_library-name_ /][_library-version_/]_resource-name_ [/_resource-version_]
+----
+
+Elements of the resource identifier in brackets (`[]`) are optional. A
+resource name, identifying a particular resource (a file or a graphic,
+for example), is required. In `firstcup-war`, a resource library with
+the name `components` is packaged in the web application root, and this
+library contains one resource, a file called `inputDate.xhtml`. The
+resource identifier for this resource is therefore
+`components/inputDate.xhtml`, and it is located in the web application
+root at `resources/components/inputDate.xhtml`.
+
+[[the-inputdate-composite-component]]
+===== The inputDate Composite Component
+
+A composite component is a set of user-defined Jakarta Server Faces and
+Facelets components located in a resource. In `firstcup-war`, the
+`inputDate.xhtml` resource, located in the `components` resource
+library, is a composite component that contains tags for reading in a
+date the user enters in a form. Composite components consist of an
+_interface_ definition and an _implementation_.
+
+The interface definition is specified with the `<cc:interface>` tag to
+define which attributes are exposed to pages that use the composite
+component. Attributes are identified with the `<cc:attribute>` tag.
+
+The `inputDate.xhtml` interface definition is as follows. It defines a
+single attribute, `date`, that must be specified in pages that use the
+`inputDate` composite component.
+
+[source,xml]
+----
+<cc:interface>
+    <cc:attribute name="date" />
+</cc:interface>
+----
+
+The implementation of the composite component is specified with the
+`<cc:implementation>` tag. The tags within the `<cc:implementation>` are
+the actual component tags that will be added to pages that use the
+composite component. They can be any HTML render kit, Jakarta Server Faces,
+or Facelets tags. The `#{cc.attrs.``attribute-name``}` expression is
+used to get the value of the specified attribute from the page or
+component that is using the composite component.
+
+The implementation of the `inputDate` composite component is as follows.
+An HTML input text component will store the entered text into the `date`
+attribute, accessed by the `#{cc.attrs.date}` expression. A Jakarta Server
+Faces `convertDateTime` component will convert the entered text to a
+date with the form of `MM/dd/yyyy` (04/13/2014, for example).
+
+[source,xml]
+----
+<cc:implementation>
+    <h:inputText id="getdate" value="#{cc.attrs.date}">
+        <f:convertDateTime pattern="MM/dd/yyyy" />
+    </h:inputText>
+    <p/>
+    <h:message for="getdate" style="color:red" />
+</cc:implementation>
+----
+
+If there's an error with the input of the `inputText` component, the
+form submission is unsuccessful, and a warning message is displayed. The
+message output is specified by the `<h:message>` tag, which is connected
+to the `inputText` component that has the id `getdate`.
+
+[[implement-the-inputdate-composite-component]]
+===== Implement the inputDate Composite Component
+
+Modify the `inputDate` composite component in the `components` resource
+library.
+
+1.  Expand *Web Pages*, then `resources`, then `components`, and open
+`inputDate.xhtml`.
+2.  Add the composite component interface definition between the opening
+and closing `<cc:interface>` tags in `inputDate.xhtml`:
++
+[source,xml]
+----
+<cc:interface>
+    <cc:attribute name="date" />
+</cc:interface>
+----
+3.  Add the composite component implementation between the opening and
+closing `cc:implementation` tags:
++
+[source,xml]
+----
+<cc:implementation>
+    <h:inputText id="getdate" value="#{cc.attrs.date}">
+    <f:convertDateTime pattern="MM/dd/yyyy" />
+    </h:inputText>
+    <p/>
+    <h:message for="getdate" style="color:red" />
+</cc:implementation>
+----
+4.  In the editor window, right-click and select *Format*.
+5.  From the *File* menu, select *Save*.
+
+[[the-facelets-web-interface]]
+===== The Facelets Web Interface
+
+The `firstcup-war` web application interface has two XHTML files. The
+`greeting.xhtml` file displays Duke's current age and the form where the
+user can enter a birthday. The `response.xhtml` file displays the age
+difference between the user and Duke.
+
+The `greeting.xhtml` file contains several pieces of the `firstcup-war`
+application detailed previously. It uses the localized strings contained
+in `WebMessages.properties` and `WebMessages_es.properties`. It uses the
+`DukesBDay` managed bean to call both the `DukesAgeResource` Jakarta REST web
+service and the `DukesBirthdayBean` enterprise bean. It uses the
+`inputDate` composite component to create the input for the user to
+enter a birthday.
+
+Here's the content of the `greeting.xhtml` file.
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+      PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:fc="http://xmlns.jcp.org/jsf/composite/components">
+    <h:head>
+        <title>Firstcup Greeting Page</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h2>
+                <h:outputText value="#{bundle.Welcome}"/>
+            </h2>
+            <h:outputText value="#{bundle.DukeIs} "/>
+            <h:outputText value="#{dukesBDay.age} #{bundle.YearsOldToday}"/>
+            <p/>
+            <h:outputText value="#{bundle.Instructions}"/>
+            <p/>
+            <h:outputText value="#{bundle.YourBD} "/>
+            <fc:inputDate id="userBirthday" date="#{dukesBDay.yourBD}" />
+            <p/>
+            <h:commandButton value="#{bundle.Submit}"
+                             action="#{dukesBDay.processBirthday}"/>
+        </h:form>
+
+    </h:body>
+</html>
+----
+
+The `greeting.xhtml` file uses the HTML RenderKit and the `components`
+resource library tag libraries. The `components` tag library has a
+prefix of `fc`, and is used to specify the `inputDate` composite
+component in the form below. The
+`<fc:inputDate id="userBirthday" date="\#{dukesBDay.yourBD}" />` tag has
+the required `date` attribute, and it stores the value in the `yourBD`
+property in the `DukesBDay` managed bean by using the EL expression
+`#{dukesBDay.yourBD}`.
+
+The localized strings are referenced by the EL expressions
+`\#{bundle.``property-name``}`. For example, the
+`<h:outputText value="#{bundle.Welcome}"/>` tag will display the
+following string in English locales:
+
+[source,html]
+----
+Hi. I'm Duke. Let's find out who's older -- you or I.
+----
+
+The `<h:commandButton>` tag creates a Submit button and specifies that a
+successful submission should render the `response.xhtml` file by setting
+the `action` attribute to `#{dukesBDay.processBirthday}`. The
+`processBirthday` method returns the value `"/response.xhtml"`. The
+`action` attribute is used to define navigation rules for forms in
+Facelets pages.
+
+The `response.xhtml` file displays the age difference between the user
+and Duke and the average age difference of all users so far. Different
+strings are displayed based on whether the user is the same age,
+younger, or older than Duke. The text can be displayed or not based on
+the conditions specified by the `rendered` attribute of the
+`<h:outputText>` tag. The conditions used in the `rendered` attribute
+are Expression Language (EL) alternatives to the Java programming
+language conditional operators to allow XML parsing of the XHTML file.
+
+Table 4-1 Conditional Operator EL Language Alternatives
+
+[cols="25%,40%,35%"]
+|=======================================================================
+|*Logical Condition* |*Java Programming Language Conditional Operator* |*EL
+Alternative*
+|AND a|
+`&&`
+
+
+ a|
+`&&`
+
+
+|EQUALS a|
+`==`
+
+
+ a|
+`==`
+
+
+|LESS THAN a|
+`<`
+
+
+ |`lt`
+
+|GREATER THAN |`>` |`gt`
+|=======================================================================
+
+
+Here's the content of the `response.xhtml` file.
+
+[source,xml]
+----
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Response Page</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputText value="#{bundle.YouAre} "/>
+            <h:outputText value="#{bundle.SameAge}"
+                          rendered="#{dukesBDay.ageDiff == 0}"/>
+            <h:outputText value="#{dukesBDay.absAgeDiff}"
+                          rendered="#{dukesBDay.ageDiff lt 0}"/>
+            <h:outputText value=" #{bundle.Year} "
+                          rendered="#{dukesBDay.ageDiff == -1}"/>
+            <h:outputText value=" #{bundle.Years} "
+                          rendered="#{dukesBDay.ageDiff lt -1}"/>
+            <h:outputText value="#{bundle.Younger}"
+                          rendered="#{dukesBDay.ageDiff lt 0}"/>
+            <h:outputText value="#{dukesBDay.absAgeDiff}"
+                          rendered="#{dukesBDay.ageDiff gt 0}"/>
+            <h:outputText value=" #{bundle.Year} "
+                          rendered="#{dukesBDay.ageDiff == 1}"/>
+            <h:outputText value=" #{bundle.Years} "
+                          rendered="#{dukesBDay.ageDiff gt 1}"/>
+            <h:outputText value="#{bundle.Older}"
+                          rendered="#{dukesBDay.ageDiff gt 0}"/>
+            <p/>
+            <h:outputText
+                value="#{bundle.AverageAge} #{dukesBDay.averageAgeDifference}."/>
+            <p/>
+            <h:commandButton id="back" value="#{bundle.Back}" action="greeting"/>
+        </h:form>
+    </h:body>
+</html>
+----
+
+For example, the `\#{bundle.SameAge}` string is displayed if the user and
+Duke have the same birthday, as specified by the condition
+`#{dukesBDay.ageDiff == 0}` in the `rendered` attribute. That is, the
+following string is displayed when the `ageDiff` property of `DukesBDay`
+equals `0`:
+
+[source,html]
+----
+You are the same age as Duke!
+----
+
+The form also contains a `<h:commandButton>` tag that creates a *Back*
+button, which directs the user back to the `greeting.xhtml` page, as
+specified in the `action` attribute.
+
+[[add-the-form-to-greeting.xhtml]]
+===== Add the Form to greeting.xhtml
+
+Add the form that provides the user interface for displaying Duke's age
+and specifying the user's birthday.
+
+1.  In the *Projects* tab, double-click `greeting.xhtml` in the
+`firstcup-war` project and, in the editor window, replace the text
+between the `<h:form>` and `</h:form>` tags with the following:
++
+[source,xml]
+----
+<h2>
+    <h:outputText value="#{bundle.Welcome}"/>
+</h2>
+<h:outputText value="#{bundle.DukeIs} "/>
+<h:outputText value="#{dukesBDay.age} #{bundle.YearsOldToday}"/>
+<p/>
+<h:outputText value="#{bundle.Instructions}"/>
+<p/>
+<h:outputText value="#{bundle.YourBD} "/>
+<fc:inputDate id="userBirthday" date="#{dukesBDay.yourBD}" />
+<p/>
+<h:commandButton value="#{bundle.Submit}" action="#{dukesBDay.processBirthday}"/>
+----
+2.  In the editor window, right-click and select *Format*.
+3.  From the *File* menu, select *Save*.
+
+[[add-the-form-to-response.html]]
+===== Add the Form to response.html
+
+Add a form that displays the age difference between Duke and the user,
+displays the average age difference of all users, and allows the user to
+navigate back to `greeting.xhtml`.
+
+1.  In the *Projects* tab, double-click `response.xhtml` in the
+`firstcup-war` project and, in the editor window, replace the text
+between the `<h:form>` and `</h:form>` tags with the following:
++
+[source,xml]
+----
+<h:outputText value="#{bundle.YouAre} "/>
+<h:outputText value="#{bundle.SameAge}"
+              rendered="#{dukesBDay.ageDiff == 0}"/>
+<h:outputText value="#{dukesBDay.absAgeDiff}"
+              rendered="#{dukesBDay.ageDiff lt 0}"/>
+<h:outputText value=" #{bundle.Year} "
+              rendered="#{dukesBDay.ageDiff == -1}"/>
+<h:outputText value=" #{bundle.Years} "
+              rendered="#{dukesBDay.ageDiff lt -1}"/>
+<h:outputText value="#{bundle.Younger}"
+              rendered="#{dukesBDay.ageDiff lt 0}"/>
+<h:outputText value="#{dukesBDay.absAgeDiff}"
+              rendered="#{dukesBDay.ageDiff gt 0}"/>
+<h:outputText value=" #{bundle.Year} "
+              rendered="#{dukesBDay.ageDiff == 1}"/>
+<h:outputText value=" #{bundle.Years} "
+              rendered="#{dukesBDay.ageDiff gt 1}"/>
+<h:outputText value="#{bundle.Older}"
+              rendered="#{dukesBDay.ageDiff gt 0}"/>
+<p/>
+<h:outputText value="#{bundle.AverageAge} #{dukesBDay.averageAgeDifference}." />
+<p/>
+<h:commandButton id="back" value="#{bundle.Back}" action="greeting"/>
+----
+2.  In the editor window, right-click and select *Format*.
+3.  From the *File* menu, select *Save*.
+
+[[building-packaging-deploying-and-running-the-firstcup-war-web-application]]
+==== Building, Packaging, Deploying, and Running the firstcup-war Web Application
+
+In this section, you will build the `firstcup-war` web application,
+deploy it to the server, and run the application.
+
+[[build-package-and-deploy-the-firstcup-war-web-application]]
+===== Build, Package, and Deploy the firstcup-war Web Application
+
+Now build and package the `DukesBirthdayBean` enterprise bean, the
+`FirstcupUser` entity, and the `firstcup-war` web client into a WAR
+file, `firstcup-war.war`, then deploy it to the server.
+
+1.  In the *Projects* tab, select the `firstcup-war` project.
+2.  Right-click `firstcup-war` and select *Run*.
+
+After `firstcup-war.war` deploys successfully to GlassFish Server, a web
+browser will load the application URL.
+
+[[run-the-firstcup-war-application]]
+===== Run the firstcup-war Application
+
+1.  On the greeting page, enter your birth date in the *Your birthday*
+field. Make sure you use the date pattern specified on the page:
+MM/dd/yyyy.
+2.  Click *Submit*.
+3.  After the `response.xhtml` page is displayed, click *Back* to return
+to the `greeting.xhtml` page.
+4.  Enter a different birthday in the text field and click *Submit* again
+to see how the average age of First Cup users changes.
