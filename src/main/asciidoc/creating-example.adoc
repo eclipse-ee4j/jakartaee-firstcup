@@ -119,8 +119,7 @@ first install the archetypes and supporting projects to your local Maven
 repository by following these steps:
 
 1.  In Apache NetBeans IDE select *File*, then *Open Project*, navigate to the
-location where you installed the tutorial (usually
-`glassfish5/docs/firstcup`), select `example`, deselect the *Open
+location where you cloned the tutorial repository, select `example`, deselect the *Open
 Required Projects* check box, and click *Open Project*.
 2.  Right-click the `firstcup` project in the Projects pane and select
 *Build*.

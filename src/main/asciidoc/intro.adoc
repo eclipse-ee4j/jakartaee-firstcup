@@ -33,6 +33,7 @@ This tutorial is compatible with the following software:
 |*Software* |*Version*
 |link:https://adoptopenjdk.net/[Java Development Kit (JDK)] | 8 update 144 (8u144) or greater
 |link:https://eclipse-ee4j.github.io/glassfish/[GlassFish Server] | 5.1 or greater
+|link:https://github.com/eclipse-ee4j/jakartaee-firstcup-examples/[Fist Cup Examples] | Git repository
 |link:https://netbeans.apache.org/[Apache NetBeans IDE] | 8.2 or greater
 |link:https://eclipse.org/ide/[Eclipse IDE] | 4.7.0 or greater
 
@@ -41,13 +42,13 @@ This tutorial is compatible with the following software:
 [[get-the-jakarta-ee-8-sdk]]
 ==== Get the Jakarta EE 8 SDK
 
-To get the Jakarta EE 8 SDK, go to
+To get GlassFish, go to
 `https://eclipse-ee4j.github.io/glassfish/download`. Download and
 install the SDK. The location where you install it is typically
 `glassfish5` in your home directory, but you can change this.
 
-The tutorial is installed in the `docs/firstcup` directory of your SDK
-installation.
+You need to download the code from this tutorial separately, from its Git
+repository, at `https://github.com/eclipse-ee4j/jakartaee-firstcup-examples/`
 
 [[install-the-netbeans-ide-distribution-for-java-ee]]
 ==== Install the Apache NetBeans IDE Distribution for Jakarta EE
