@@ -7,8 +7,6 @@ Release 8
 
 Contributed 2018, 2019
 
-[[sthref1]]
-
 '''''
 
 Jakarta EE Your First Cup: An Introduction to

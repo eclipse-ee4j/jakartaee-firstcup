@@ -14,9 +14,7 @@ an enterprise bean; `FirstcupUser`, a Java Persistence API entity; and
 `firstcup-war`, a web application created with JavaServer Faces Facelets
 technology.
 
-[[GJBEW]]
-
-.*Figure 3-1 Architecture of the First Cup Example Applications*
+.*Architecture of the First Cup Example Applications*
 image:firstcup-architecture.png[
 "Architecture of First Cup example applications."]
 
@@ -103,7 +101,7 @@ Before you start coding the example, you need to perform some
 configuration tasks:
 
 1.  Register the server with your Apache NetBeans IDE as described in
-link:intro002.html#GIOEW[Add GlassFish Server as a Server in NetBeans
+link:#add-glassfish-server-as-a-server-in-netbeans-ide[Add GlassFish Server as a Server in NetBeans
 IDE].
 2.  Install the Maven archetypes used to create the example
 applications.
@@ -176,7 +174,7 @@ MIME-type is `text/plain`.
 In NetBeans IDE, create a new web project using the
 `dukes-age-archetype` Maven archetype.
 
-Create the Project in Apache NetBeans IDE 
+====== Create the Project in Apache NetBeans IDE 
 
 1.  From the *File* menu, select *New Project*.
 2.  Under *Categories*, select *Maven*.
@@ -203,7 +201,7 @@ After you create the basic application structure with the archetype, you
 will configure how the application will run, implement the functionality
 of the resource class, and then deploy the application.
 
-Configure the dukes-age Web Application
+====== Configure the dukes-age Web Application
 
 Set the default URL that is brought up in a web browser when you run
 `dukes-age`.
@@ -215,7 +213,7 @@ Set the default URL that is brought up in a web browser when you run
 4.  Under *Relative URL* enter `/webapi/dukesAge`.
 5.  Click *OK*.
 
-Implement the getText Method
+====== Implement the getText Method
 
 Add code to `DukesAgeResource.getText` that calculates Duke's age at the
 time of the request. To do this, use the `java.util.Calendar` and

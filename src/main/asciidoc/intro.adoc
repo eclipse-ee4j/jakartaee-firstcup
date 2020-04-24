@@ -22,16 +22,13 @@ first:
 * link:#get-the-jakarta-ee-8-sdk[Get the Jakarta EE 8 SDK]
 * link:#install-the-netbeans-ide-distribution-for-java-ee[Install the Apache NetBeans IDE distribution for Jakarta EE]
 * link:#add-glassfish-server-as-a-server-in-netbeans-ide[Add GlassFish Server as a server in Apache NetBeans IDE]
-////
-* link:#get-the-latest-updates-to-this-tutorial[Get the latest updates to this tutorial]
-////
 
 [[software-compatibility]]
 ==== Software Compatibility Notice
 
 This tutorial is compatible with the following software:
 
-[width="55%",cols="30%,60%"]
+[cols="30%,70%"]
 |=======================================================================
 |*Software* |*Version*
 |link:https://adoptopenjdk.net/[Java Development Kit (JDK)] | 8 update 144 (8u144) or greater
@@ -45,7 +42,7 @@ This tutorial is compatible with the following software:
 ==== Get the Jakarta EE 8 SDK
 
 To get the Jakarta EE 8 SDK, go to
-`https://eclipse-ee4j.github.io/glassfish/download/`. Download and
+`https://eclipse-ee4j.github.io/glassfish/download`. Download and
 install the SDK. The location where you install it is typically
 `glassfish5` in your home directory, but you can change this.
 

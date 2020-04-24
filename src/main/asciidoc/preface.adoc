@@ -41,7 +41,7 @@ this tutorial:
 The following table describes the typographic conventions that are used
 in this book.
 
-[width="75%",cols="20%,39%,39%"]
+[cols="20%,39%,39%"]
 |=======================================================================
 |*Convention* |*Meaning* |*Example*
 |*Boldface* |Boldface type indicates graphical user interface elements

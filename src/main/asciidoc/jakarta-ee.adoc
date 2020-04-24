@@ -68,14 +68,11 @@ appropriate results from the components in the business tier
 * Perform some basic logic and hold some data temporarily in managed
 beans
 
-link:#GCTOG[Table 2-1] lists some of the main Jakarta EE technologies that
+The following table lists some of the main Jakarta EE technologies that
 are used in the web tier in Jakarta EE applications.
 
-[[GCTOG]]
-
-Table 2-1 Web-Tier Jakarta EE Technologies
-
-[width="80%",cols="25%,74%"]
+.*Web-Tier Jakarta EE Technologies*
+[cols="25%,74%"]
 |=======================================================================
 |*Technology* |*Purpose*
 |Jakarta Server Faces technology |A user interface component framework for

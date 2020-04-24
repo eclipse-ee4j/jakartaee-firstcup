@@ -3,8 +3,8 @@
 
 This chapter gives step-by-step instructions on coding and running the
 `firstcup-war` web application, which uses the `dukes-age` web service
-described in link:creating-example.html#GCRKP[Chapter 3, "Creating Your
-First Jakarta EE Application"]. The `firstcup-war` web application is a
+described in link:#creating-your-first-jakarta-ee-application["Creating Your
+First Jakarta EE Application" chapter]. The `firstcup-war` web application is a
 more complicated application that uses several different Jakarta EE APIs.
 
 [[the-firstcup-war-project]]
@@ -21,7 +21,7 @@ older, the user or Duke. This data is stored in an Apache Derby database table
 using Jakarta Persistence. The business logic, which provides the
 core functionality of the application, is handled by an enterprise bean.
 
-All the tiers described in link:jakarta-ee001.html#GCRKR[Tiered
+All the tiers described in link:#tiered-applications[Tiered
 Applications] are present in the `firstcup-war` web application. The web
 or client tier is the Jakarta Server Faces front end. The enterprise
 information systems, or EIS, tier is the Derby database. The business
@@ -186,7 +186,7 @@ code in bold:
 [source,java]
 ----
 public int getAgeDifference(Date date) {
-    *int ageDifference;
+    int ageDifference;
 
     Calendar theirBirthday = new GregorianCalendar();
     Calendar dukesBirthday = new GregorianCalendar(1995, Calendar.MAY, 23);
@@ -195,8 +195,7 @@ public int getAgeDifference(Date date) {
     theirBirthday.setTime(date);
 
     // Subtract the user's age from Duke's age
-    ageDifference = dukesBirthday.get(Calendar.YEAR)
-        - theirBirthday.get(Calendar.YEAR);
+    ageDifference = dukesBirthday.get(Calendar.YEAR) - theirBirthday.get(Calendar.YEAR);
     logger.log(Level.INFO, "Raw ageDifference is: {0}",  ageDifference);
     // Check to see if Duke's birthday occurs before the user's. If so,
     // subtract one from the age difference
@@ -210,7 +209,7 @@ public int getAgeDifference(Date date) {
 
     logger.log(Level.INFO, "Final ageDifference is: {0}",  ageDifference);
 
-    return ageDifference;*
+    return ageDifference;
 }
 ----
 +
@@ -270,7 +269,7 @@ and pasting the following code in bold:
 [source,java]
 ----
 public int getAge() {
-    *try {
+    try {
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target("http://localhost:8080/dukes-age/webapi/dukesAge");
         String response = target.request().get(String.class);
@@ -278,7 +277,7 @@ public int getAge() {
     } catch (IllegalArgumentException | NullPointerException | WebApplicationException ex) {
         logger.severe("processing of HTTP response failed");
     }
-    return age;*
+    return age;
 }
 ----
 3.  In the editor window, right-click and select *Format*.
@@ -299,13 +298,13 @@ copying and pasting the following code in bold:
 [source,java]
 ----
 public String processBirthday() {
-    *this.setAgeDiff(dukesBirthdayBean.getAgeDifference(yourBD));
+    this.setAgeDiff(dukesBirthdayBean.getAgeDifference(yourBD));
     logger.log(Level.INFO, "age diff from dukesbday {0}", ageDiff);
     this.setAbsAgeDiff(Math.abs(this.getAgeDiff()));
     logger.log(Level.INFO, "absAgeDiff {0}", absAgeDiff);
     this.setAverageAgeDifference(dukesBirthdayBean.getAverageAgeDifference());
     logger.log(Level.INFO, "averageAgeDifference {0}", averageAgeDifference);
-    return "/response.xhtml";*
+    return "/response.xhtml";
 }
 ----
 +
@@ -437,7 +436,7 @@ and closing `<cc:interface>` tags in `inputDate.xhtml`:
 [source,xml]
 ----
 <cc:interface>
-    *<cc:attribute name="date" />*
+    <cc:attribute name="date" />
 </cc:interface>
 ----
 3.  Add the composite component implementation between the opening and
@@ -446,11 +445,11 @@ closing `cc:implementation` tags:
 [source,xml]
 ----
 <cc:implementation>
-    *<h:inputText id="getdate" value="#{cc.attrs.date}">
+    <h:inputText id="getdate" value="#{cc.attrs.date}">
     <f:convertDateTime pattern="MM/dd/yyyy" />
     </h:inputText>
     <p/>
-    <h:message for="getdate" style="color:red" />*
+    <h:message for="getdate" style="color:red" />
 </cc:implementation>
 ----
 4.  In the editor window, right-click and select *Format*.
@@ -544,7 +543,7 @@ language conditional operators to allow XML parsing of the XHTML file.
 
 Table 4-1 Conditional Operator EL Language Alternatives
 
-[width="60%",cols="25%,40%,35%"]
+[cols="25%,40%,35%"]
 |=======================================================================
 |*Logical Condition* |*Java Programming Language Conditional Operator* |*EL
 Alternative*
