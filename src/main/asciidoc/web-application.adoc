@@ -89,10 +89,10 @@ following code in bold to the second, two-argument constructor:
 [source,java]
 ----
 public FirstcupUser(Date date, int difference) {
-    *Calendar cal = new GregorianCalendar();
+    Calendar cal = new GregorianCalendar();
     cal.setTime(date);
     birthday = cal;
-    ageDifference = difference;*
+    ageDifference = difference;
 }
 ----
 3.  Right-click in the editor window and select *Format*.
