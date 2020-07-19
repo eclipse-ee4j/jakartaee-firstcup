@@ -62,7 +62,7 @@ Related Books and Projects
 The following books and projects may be helpful to you in understanding
 this tutorial:
 
-* The https://javaee.github.io/tutorial[Jakarta EE Tutorial]
+* The https://eclipse-ee4j.github.io/jakartaee-tutorial[Jakarta EE Tutorial]
 * The GlassFish Server Open Source Edition documentation set
 * The NetBeans IDE documentation
 
