@@ -108,24 +108,23 @@ MIME-type is `text/plain`.
 Creating the dukes-age Application Using the Maven Archetype
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In NetBeans IDE, create a new web project using the
+In Eclipse IDE, create a new web project using the
 `dukes-age-archetype` Maven archetype.
 
-Create the Project in NetBeans IDE 
+Create the Project in Eclipse IDE 
 
-1.  From the *File* menu, select *New Project*.
-2.  Under *Categories*, select *Maven*.
-3.  Under *Projects*, select *Project from Archetype*.
-4.  Click *Next*.
-5.  In the *Search* field, enter `dukes-age`.
-6.  In the *Known Archetypes* field, select `dukes-age-archetype`.
-7.  Click *Next*.
-8.  In the *Project Name* field, enter `dukes-age`.
-9.  In the *Package* field, enter `firstcup.dukesage.resource`.
-10. Click *Finish*.
+1. From the *File* menu, select *New* -> *Maven Project*.
+2. Under *New Maven Project* dialog, click  *Next*.
+3. In the *Filter* field, enter `dukes-age` and check the *Include snapshot
+archetypes*.
+4. Select `dukes-age-archetype` and click *Next*.
+5. In the *Group Id* field, enter `jakarta.firstcup`.
+6. In the *Artifact Id* field, enter `dukes-age`.
+7. In the *Package* field, enter `jakarta.firstcup.dukesage`.
+8. Click *Finish*.
 +
-You should now see the module you created in the Projects tab. The
-project is created in the `NetBeansProjects` directory under your home
+You should now see the module you created in the Project Explorer tab. The
+project is created in the `eclipse-workspace` directory under your home
 directory.
 
 The `dukes-age-archetype` archetype creates the structure of the JAX-RS
