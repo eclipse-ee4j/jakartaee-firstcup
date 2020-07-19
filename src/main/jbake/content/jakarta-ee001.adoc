@@ -100,7 +100,7 @@ refer to Jakarta EE components
 |Servlets |Java programming language classes that dynamically process
 requests and construct responses, usually for HTML pages
 
-|Contexts and Dependency Injection for Java EE |A set of contextual
+|Contexts and Dependency Injection for Jakarta EE |A set of contextual
 services that make it easy for developers to use enterprise beans along
 with JavaServer Faces technology in web applications
 |=======================================================================
