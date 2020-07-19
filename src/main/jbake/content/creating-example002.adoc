@@ -24,7 +24,7 @@ Before you start coding the example, you need to perform some
 configuration tasks:
 
 1.  Register the server with your NetBeans IDE as described in
-link:intro002.html#GIOEW[Add GlassFish Server as a Server in NetBeans
+link:intro002.html#GIOEW[Add GlassFish Server as a Server in Eclipse
 IDE].
 2.  Install the Maven archetypes used to create the example
 applications.
@@ -43,14 +43,20 @@ Before you can create applications based on the archetypes, you must
 first install the archetypes and supporting projects to your local Maven
 repository by following these steps:
 
-1.  In NetBeans IDE select *File*, then *Open Project*, navigate to the
-location where you installed the tutorial (usually
-`glassfish5/docs/firstcup`), select `example`, deselect the *Open
-Required Projects* check box, and click *Open Project*.
-2.  Right-click the `firstcup` project in the Projects pane and select
-*Build*.
+1. In Eclipse IDE select *File* -> *Import...*, then search for
+*Existing Maven Projects* and click *Next*
+2. Click in *Browse...* and navigate to the location where you installed the
+tutorial (usually glassfish5/docs/firstcup`), select `example`, click *Open*
+and *Finish*.
+3. Right-click the `firstcup-examples` project in the Project Explorer,
+than go to *Run As* -> *Maven Install*
 
 The required projects, including the archetypes, will be built.
+
+After that you can delete the `firstcup-examples` from your Project Explorer.
+Right-click the `firstcup-examples` than click *Delete*, check only
+*Delete 5 nested projects* than click *OK*.
+
 
 [[GCRKN]][[creating-the-web-service]]
 
