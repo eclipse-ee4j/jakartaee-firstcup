@@ -21,7 +21,7 @@ technology.
 [[GJBEW]]
 
 .*Figure 3-1 Architecture of the First Cup Example Applications*
-image:img/firstcup-architecture.png[
+image:img/new-firstcup-architecture.png[
 "Architecture of First Cup example applications."]
 
 `DukesAgeResource` is a JAX-RS resource that calculates the age of Duke,
