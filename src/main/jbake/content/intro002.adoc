@@ -42,15 +42,14 @@ This tutorial is compatible with the following software:
 
 [[GCRNX]][[get-the-jakarta-ee-8-sdk]]
 
-Get the Jakarta EE 8 SDK
+Get the Glassfish Application Server
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-To get the Jakarta EE 8 SDK, go to
-`http://www.oracle.com/technetwork/java/jakartaee/downloads/`. Download and
-install the SDK. The location where you install it is typically
-`glassfish5` in your home directory, but you can change this.
+To get the Glassfish, go to `https://eclipse-ee4j.github.io/glassfish/download`.
+Download and install the Glassfish. The location where you install it is typically
+`glassfish` in your home directory, but you can change this.
 
-The tutorial is installed in the `docs/firstcup` directory of your SDK
+The tutorial is installed in the `docs/firstcup` directory of your Glassfish
 installation.
 
 [[GCRNU]][[install-the-netbeans-ide-distribution-for-java-ee]]
