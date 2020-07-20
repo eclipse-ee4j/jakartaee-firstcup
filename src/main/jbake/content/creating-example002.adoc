@@ -142,12 +142,10 @@ Configure the dukes-age Web Application
 Set the default URL that is brought up in a web browser when you run
 `dukes-age`.
 
-1.  In the *Projects* tab, right-click the `dukes-age` project and select
-*Properties*.
-2.  Under *Categories*, click *Run*.
-3.  Under *Server*, select the GlassFish Server instance you configured.
-4.  Under *Relative URL* enter `/webapi/dukesAge`.
-5.  Click *OK*.
+1.  In the *Project Explorer* tab, right-click the `dukes-age` project and go to
+*Run As* -> *Run on server*.
+2.  Under *Run on Server* dialog, select the GlassFish Server instance you configured.
+3.  Click *Finish*.
 
 Implement the getText Method
 
