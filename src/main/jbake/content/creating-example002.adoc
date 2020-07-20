@@ -134,18 +134,8 @@ endpoint application, including:
 * The `web.xml` deployment descriptor
 
 After you create the basic application structure with the archetype, you
-will configure how the application will run, implement the functionality
+will implement the functionality
 of the resource class, and then deploy the application.
-
-Configure the dukes-age Web Application
-
-Set the default URL that is brought up in a web browser when you run
-`dukes-age`.
-
-1.  In the *Project Explorer* tab, right-click the `dukes-age` project and go to
-*Run As* -> *Run on server*.
-2.  Under *Run on Server* dialog, select the GlassFish Server instance you configured.
-3.  Click *Finish*.
 
 Implement the getText Method
 
@@ -189,28 +179,27 @@ return "" + dukesAge;
 Starting GlassFish Server and the Database Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Follow these steps to start GlassFish Server and Apache Derby.
+Follow these steps to add the application to the server and start GlassFish Server.
 
-1.  Click the *Services* tab.
-2.  Expand *Servers*.
-3.  Right-click the GlassFish Server instance and select *Start*.
+1.  Click the *Servers* tab.
+2.  Right-click the GlassFish Server instance and go to *Add and Remove...*.
+3. At *Add and Remove...* dialog, select the `dukes-age` artifact and click *Add >*.
+4. Click *Finish*.
+5. Right-click the GlassFish Server instance and click *Start*.
 +
 Both the database server and the GlassFish Server instance will start.
-In the tab where the GlassFish Server instance is running, you can see
-the contents of the server log.
+In the tab *Console* you can see the contents of the server log.
 
 [[GCTOZ]][[building-and-deploying-the-web-service-endpoint]]
 
 Building and Deploying the Web Service Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Build `dukes-age.war`, the JAX-RS web application, and deploy it to your
-GlassFish Server instance.
+With the previous step done, you will have built `dukes-age.war`
+the JAX-RS web application and deployed it to your GlassFish Server instance.
 
-In the *Projects* tab, right-click `dukes-age` and select *Run*.
-
-After `dukes-age.war` deploys successfully to GlassFish Server, a web
-browser will load the URL of the `DukesAgeResource` path, and you'll see
+After `dukes-age.war` deploys successfully to GlassFish Server, open your web
+browser and go to `http://localhost:8080/dukes-age/webapi/dukesAge`, and you'll see
 the returned `String` representing Duke's age.
 
 At this point, you've successfully created, deployed, and run your first
