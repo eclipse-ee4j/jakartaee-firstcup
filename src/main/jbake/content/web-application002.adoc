@@ -13,19 +13,20 @@ Creating the Web Application Project Using the Archetype
 --------------------------------------------------------
 
 Follow these steps to create a new web application project using the
-`firstcup-war-archetype` in NetBeans IDE.
+`firstcup-war-archetype` in Eclipse IDE.
 
-1.  From the *File* menu, select *New Project*.
-2.  Under *Projects*, select *Project from Archetype*.
-3.  Click *Next*.
-4.  In the *Search* field, enter `firstcup`.
-5.  In the *Known Archetypes* field, select `firstcup-war-archetype`.
-6.  Click *Next*.
-7.  In the *Project Name* field, enter `firstcup-war`.
-8.  In the *Package* field, enter `firstcup`.
-9.  Click *Finish*.
+1. From the *File* menu, select *New* -> *Maven Project*.
+2. Under *New Maven Project* dialog, click  *Next*.
+3. In the *Filter* field, enter `firstcup` and check the *Include snapshot
+archetypes*.
+4. Select `firstcup-war-archetype` and click *Next*.
+5. In the *Group Id* field, enter `jakarta.firstcup`.
+6. In the *Artifact Id* field, enter `firstcup-war`.
+7. In the *Package* field, enter `jakarta.firstcup.firstcupwar`.
+8. Click *Finish*.
+
 +
-You should now see the module you created in the *Projects* tab.
+You should now see the module you created in the *Project Explorer* tab.
 
 The `firstcup-war-archetype` archetype creates the structure of the web
 application, including the following:
