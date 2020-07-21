@@ -40,7 +40,7 @@ Add code to a business method to the `DukesBirthdayBean` session bean to
 call the `findAverageAgeDifferenceOfAllFirstcupUsers` named query in
 `FirstcupUser` that returns the average age difference of all users.
 
-1.  Expand the *Source Packages* node, expand the `firstcup.ejb` node,
+1.  Expand the *Source Packages* node, expand the `jakarta.firstcup.firstcupwar.ejb` node,
 then double-click the `DukesBirthdayBean.java` file to open it in the
 editor window.
 2.  Find the business method called `getAverageAgeDifference` and add
@@ -61,7 +61,7 @@ The named query in `FirstcupUser` is called by using the `createNamedQuery` meth
 in `EntityManager`. Because this query returns
 a single number, the `getSingleResult` method is called on the returned
 `Query` object. The query returns a `Double`.
-3.  Right-click in the editor window and select *Format*.
+3.  Right-click in the editor window and select *Source* -> *Format*.
 
 [[GKGOT]][[implement-a-business-method-for-calculating-the-age-difference-between-duke-and-the-user]]
 
@@ -120,5 +120,5 @@ difference, then stored in Derby by calling the `persist` method
 in `EntityManager`.
 +
 The final age difference is returned as an `int`.
-2.  Right-click in the editor window and select *Format*.
+2.  Right-click in the editor window and select *Source* -> *Format*.
 3.  From the *File* menu, choose *Save*.
