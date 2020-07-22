@@ -20,15 +20,34 @@ deploy it to the server, and run the application.
 Build, Package, and Deploy the firstcup-war Web Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Before we finish, we need to create a run configuraton to start the embedded
+database for us.
+
+1. Go to *Run* -> *External Tools* -> *External Tools Configurations...*.
+2. At *External Tools Configuration* dialog click in *Program* and *New launch configuration* icon.
+3. Then give a name to the shortcut at field *Name:*.
+4. At *Location:* field click in *Browse File System...* and search for your GlassFish installation.
+5. In your Glassfish installation root folder, go to bin folder.
+6. Select `asadmin.bat` if you are in Windows, otherwise select `asadmin.sh` and click *OK*.
+7. In *Arguments:* text area put `start-database`.
+8. Click *Apply* and *Run*.
+
+Now the internal database is already running.
+
+
 Now build and package the `DukesBirthdayBean` enterprise bean, the
 `FirstcupUser` entity, and the `firstcup-war` web client into a WAR
 file, `firstcup-war.war`, then deploy it to the server.
 
-1.  In the *Projects* tab, select the `firstcup-war` project.
-2.  Right-click `firstcup-war` and select *Run*.
 
-After `firstcup-war.war` deploys successfully to GlassFish Server, a web
-browser will load the application URL.
+1. Click the *Servers* tab.
+2. Right-click the GlassFish Server instance and go to *Add and Remove...*.
+3. At *Add and Remove...* dialog, select the `firstcup-war` artifact and click *Add >*.
+4. Click *Finish*.
+5. Right-click the GlassFish Server instance and click *Start*.
+
+After `firstcup-war.war` deploys successfully to GlassFish Server,
+go to `http://localhost:8080/firstcup-war/` url.
 
 [[GCTQC]][[run-the-firstcup-war-application]]
 
@@ -43,3 +62,5 @@ MM/dd/yyyy.
 to the `greeting.xhtml` page.
 4.  Enter a different birthday in the text field and click *Submit* again
 to see how the average age of First Cup users changes.
+
+Congrats !
