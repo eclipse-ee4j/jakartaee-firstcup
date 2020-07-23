@@ -13,7 +13,7 @@ Architecture of the Example Applications
 ----------------------------------------
 
 The example applications consist of four main components:
-`DukesAgeResource`, a JAX-RS RESTful web service; `DukesBirthdayBean`,
+`DukesAgeResource`, a _Jakarta RESTful Web Service_; `DukesBirthdayBean`,
 an enterprise bean; `FirstcupUser`, a Java Persistence API entity; and
 `firstcup-war`, a web application created with JavaServer Faces Facelets
 technology.
@@ -24,7 +24,7 @@ technology.
 image:img/firstcup-architecture.png[
 "Architecture of First Cup example applications."]
 
-`DukesAgeResource` is a JAX-RS resource that calculates the age of Duke,
+`DukesAgeResource` is a _Jakarta RESTful Web Service_ resource that calculates the age of Duke,
 the Java mascot. Duke was born May 23, 1995, when the first demo of Java
 technology was publicly released.
 
@@ -53,7 +53,7 @@ whether he or she is older or younger than Duke, based on the date the
 user entered in the `greeting.xhtml` page, and displays the average age
 difference of all users.
 * `DukesBDay.java`: A CDI managed bean that defines properties to hold
-the user's birth date, uses the JAX-RS Client API to get Duke's current
+the user's birth date, uses the _Jakarta RESTful Web Service_ Client API to get Duke's current
 age from the `DukesAgeResource` web service, and calculates the age
 difference between the user and Duke from the enterprise bean.
 * `web.xml`: The web application's deployment descriptor, which is used
@@ -90,10 +90,10 @@ through the web tier.
 Jakarta EE Technologies Used in the Example Applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `DukesAgeResource` web service is a JAX-RS resource. The
+The `DukesAgeResource` web service is a _Jakarta RESTful Web Service_ resource. The
 `DukesBirthdayBean` enterprise bean is a stateless session bean. The
 `FirstcupUser` entity is a Java Persistence API entity. The `DukesBDay`
-CDI managed bean uses the JAX-RS client API to access the
+CDI managed bean uses the _Jakarta RESTful Web Service_ client API to access the
 `DukesAgeResource` web service. The `firstcup-war` web client is a
 JavaServer Faces application that runs in the web container of the Java
 EE server.
