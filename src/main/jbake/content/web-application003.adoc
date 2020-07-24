@@ -1,15 +1,15 @@
 type=page
 status=published
-title=Modifying the Java Persistence API Entity
+title=Modifying the Jakarta Persistence Entity
 next=web-application004.html
 prev=web-application002.html
 ~~~~~~
-= Modifying the Java Persistence API Entity
+= Modifying the Jakarta Persistence Entity
 
 
-[[GJBCS]][[modifying-the-java-persistence-api-entity]]
+[[GJBCS]][[modifying-the-jakarta-persistence-entity]]
 
-Modifying the Java Persistence API Entity
+Modifying the Jakarta Persistence Entity
 -----------------------------------------
 
 The Java Persistence API allows you to create and use Java programming

@@ -1,16 +1,16 @@
 type=page
 status=published
-title=Modifying the Enterprise Bean
+title=Modifying the Jakarta Enterprise Bean
 next=web-application005.html
 prev=web-application003.html
 ~~~~~~
-= Modifying the Enterprise Bean
+= Modifying the Jakarta Enterprise Bean
 
 
 [[GCRLX]][[modifying-the-enterprise-bean]]
 
-Modifying the Enterprise Bean
------------------------------
+Modifying the Jakarta Enterprise Bean
+------------------------------------
 
 `DukesBirthdayBean` is a _stateless session bean_. Stateless session beans
 are enterprise beans that do not maintain a conversational state with a
