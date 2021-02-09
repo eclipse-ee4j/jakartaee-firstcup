@@ -1,10 +1,10 @@
 type=page
 status=published
-title=Jakarta Enterprise Edition Your First Cup: An Introduction to Jakarta EE, Release 8
+title=Jakarta Enterprise Edition Your First Cup: An Introduction to Jakarta EE, Release 9
 next=preface.html
 prev=toc.html
 ~~~~~~
-= Jakarta Enterprise Edition Your First Cup: An Introduction to Jakarta EE, Release 8
+= Jakarta Enterprise Edition Your First Cup: An Introduction to Jakarta EE, Release 9
 
 
 [[java-platform-enterprise-edition]]
@@ -13,19 +13,19 @@ Jakarta Enterprise Edition
 
 Your First Cup: An Introduction to Jakarta EE
 
-Release 8
+Release 9
 
-Contributed 2018, 2019
+Contributed 2021
 
 [[sthref1]]
 
 '''''
 
 Jakarta Enterprise Edition Your First Cup: An Introduction to
-Jakarta EE, Release 8
+Jakarta EE, Release 9
 
 
-Copyright © 2017, 2019 Oracle and/or its affiliates. All rights reserved.
+Copyright © 2021 Oracle and/or its affiliates. All rights reserved.
 
 This program and the accompanying materials are made available under the 
 terms of the Eclipse Public License v. 2.0, which is available at 

@@ -34,7 +34,7 @@ This tutorial is compatible with the following software:
 |=======================================================================
 |*Software* |*Version*
 |link:http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java Development Kit (JDK)] | 8 update 144 (8u144) or greater
-|link:https://javaee.github.io/glassfish/[GlassFish Server] | 5.0 or greater
+|link:https://github.com/eclipse-ee4j/glassfish/[GlassFish Server] | 6.0 or greater
 |link:https://netbeans.org/[NetBeans IDE] | 8.2 or greater
 |link:https://eclipse.org/ide/[Eclipse IDE] | 4.7.0 or greater
 
