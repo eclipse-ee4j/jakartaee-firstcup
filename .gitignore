@@ -1,2 +1,6 @@
 target/
 src/main/jbake/content/toc.adoc
+*.project
+*.settings
+*.classpath
+.idea

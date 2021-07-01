@@ -44,8 +44,8 @@ first install the archetypes and supporting projects to your local Maven
 repository by following these steps:
 
 1.  In NetBeans IDE select *File*, then *Open Project*, navigate to the
-location where you installed the tutorial (usually
-`glassfish5/docs/firstcup`), select `example`, deselect the *Open
+location where you installed the tutorial,
+ select `example`, deselect the *Open
 Required Projects* check box, and click *Open Project*.
 2.  Right-click the `firstcup` project in the Projects pane and select
 *Build*.
@@ -89,10 +89,10 @@ of the request.
 
 The basic `DukesAgeResource` resource class is generated from the
 `dukes-age-archetype` Maven archetype. This class is annotated with the
-`javax.ws.rs.Path` annotation, which specifies the URL suffix to which
+`jakarta.ws.rs.Path` annotation, which specifies the URL suffix to which
 the resource will respond. The `DukesAgeResource` class has a single method,
-`getText`, annotated with the `javax.ws.rs.GET` and
-`javax.ws.rs.Produces` annotations. The `@GET` annotation marks the method as a
+`getText`, annotated with the `jakarta.ws.rs.GET` and
+`jakarta.ws.rs.Produces` annotations. The `@GET` annotation marks the method as a
 responder to HTTP GET requests, and `@Produces` specifies the MIME-type
 of the response sent back from `getText` to clients. In this case, the
 MIME-type is `text/plain`.
