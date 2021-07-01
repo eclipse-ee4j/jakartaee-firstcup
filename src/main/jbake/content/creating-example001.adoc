@@ -13,9 +13,9 @@ Architecture of the Example Applications
 ----------------------------------------
 
 The example applications consist of four main components:
-`DukesAgeResource`, a JAX-RS RESTful web service; `DukesBirthdayBean`,
-an enterprise bean; `FirstcupUser`, a Java Persistence API entity; and
-`firstcup-war`, a web application created with JavaServer Faces Facelets
+`DukesAgeResource`, a Jakarta RESTful Web Service; `DukesBirthdayBean`,
+an enterprise bean; `FirstcupUser`, a Jakarta Persistence entity; and
+`firstcup-war`, a web application created with Jakarta Faces Facelets
 technology.
 
 [[GJBEW]]
@@ -24,19 +24,19 @@ technology.
 image:img/firstcup-architecture.png[
 "Architecture of First Cup example applications."]
 
-`DukesAgeResource` is a JAX-RS resource that calculates the age of Duke,
+`DukesAgeResource` is a Jakarta RESTful Web Service resource that calculates the age of Duke,
 the Java mascot. Duke was born May 23, 1995, when the first demo of Java
 technology was publicly released.
 
 `DukesBirthdayBean` is a local, no-interface view stateless session bean
 that calculates the difference between the user's age and Duke's age and
-stores the user-submitted data in a Java Persistence API entity.
+stores the user-submitted data in a Jakarta Persistence entity.
 
-`FirstcupUser` is a Java Persistence API entity that represents a
+`FirstcupUser` is a Jakarta Persistence entity that represents a
 particular user's birthday. It is stored in an Apache Derby table and
 managed by the `DukesBirthdayBean` business methods.
 
-The `firstcup-war` web application is a JavaServer Faces Facelets
+The `firstcup-war` web application is a Jakarta Faces Facelets
 application that accesses `DukesAgeResource` to display Duke's age,
 reads in a date provided by the user, accesses `DukesBirthdayBean` to
 calculate who is older, and then displays the difference in years
@@ -45,15 +45,15 @@ between the user and Duke and the average age difference of all users.
 The `firstcup-war` web application consists of the following:
 
 * `greeting.xhtml`: A Facelets-enabled XHTML page, which is a page that
-uses the JavaServer Faces Facelets tag libraries. Users can type their
+uses the Jakarta Faces Facelets tag libraries. Users can type their
 birth date in a field and submit it for comparison against Duke's birth
 date.
 * `response.xhtml`: A Facelets-enabled XHTML page that tells the user
 whether he or she is older or younger than Duke, based on the date the
 user entered in the `greeting.xhtml` page, and displays the average age
 difference of all users.
-* `DukesBDay.java`: A CDI managed bean that defines properties to hold
-the user's birth date, uses the JAX-RS Client API to get Duke's current
+* `DukesBDay.java`: A Jakarta Context and Dependency Injection managed bean that defines properties to hold
+the user's birth date, uses the Jakarta RESTful Web Service Client API to get Duke's current
 age from the `DukesAgeResource` web service, and calculates the age
 difference between the user and Duke from the enterprise bean.
 * `web.xml`: The web application's deployment descriptor, which is used
@@ -90,10 +90,10 @@ through the web tier.
 Jakarta EE Technologies Used in the Example Applications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `DukesAgeResource` web service is a JAX-RS resource. The
+The `DukesAgeResource` web service is a Jakarta RESTful Web Service resource. The
 `DukesBirthdayBean` enterprise bean is a stateless session bean. The
-`FirstcupUser` entity is a Java Persistence API entity. The `DukesBDay`
-CDI managed bean uses the JAX-RS client API to access the
+`FirstcupUser` entity is a Jakarta Persistence entity. The `DukesBDay`
+Jakarta Context and Dependency Injection managed bean uses the Jakarta RESTful Web Service client API to access the
 `DukesAgeResource` web service. The `firstcup-war` web client is a
-JavaServer Faces application that runs in the web container of the Java
+Jakarta Faces application that runs in the web container of the Jakarta
 EE server.

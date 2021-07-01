@@ -88,21 +88,21 @@ Table 2-1 Web-Tier Jakarta EE Technologies
 [width="80%",cols="25%,74%"]
 |=======================================================================
 |*Technology* |*Purpose*
-|JavaServer Faces technology |A user interface component framework for
+|Jakarta Faces technology |A user interface component framework for
 web applications that allows you to include UI components (such as
 fields and buttons) on a XHTML page, called a Facelets page; convert and
 validate UI component data; save UI component data to server-side data
 stores; and maintain component state
 
-|Expression Language |A set of standard tags used in Facelets pages to
+|Jakarta Expression Language |A set of standard tags used in Facelets pages to
 refer to Jakarta EE components
 
-|Servlets |Java programming language classes that dynamically process
+|Jakarta Servlets |Java programming language classes that dynamically process
 requests and construct responses, usually for HTML pages
 
-|Contexts and Dependency Injection for Jakarta EE |A set of contextual
+|Jakarta Contexts and Dependency Injection |A set of contextual
 services that make it easy for developers to use enterprise beans along
-with JavaServer Faces technology in web applications
+with Jakarta Faces technology in web applications
 |=======================================================================
 
 
@@ -120,9 +120,9 @@ functionality exists in the business tier components.
 The following Jakarta EE technologies are among those that are used in the
 business tier in Jakarta EE applications:
 
-* Enterprise JavaBeans (enterprise bean) components
-* JAX-RS RESTful web services
-* Java Persistence API entities
+* Jakarta Enterprise Beans components
+* Jakarta RESTful web services
+* Jakarta Persistence entities
 
 [[GCRKW]][[the-enterprise-information-systems-tier]]
 
@@ -139,6 +139,6 @@ The following Jakarta EE technologies are used to access the EIS tier in
 Jakarta EE applications:
 
 * The Java Database Connectivity API (JDBC)
-* The Java Persistence API
-* The Jakarta EE Connector Architecture
-* The Java Transaction API (JTA)
+* The Jakarta Persistence
+* The Jakarta Connectors
+* The Jakarta Transactions

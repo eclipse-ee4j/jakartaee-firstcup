@@ -35,19 +35,19 @@ The Web Container
 ~~~~~~~~~~~~~~~~~
 
 The web container is the interface between web components and the web
-server. A web component can be a servlet or a JavaServer Faces Facelets
+server. A web component can be a servlet or a Jakarta Faces Facelets
 page. The container manages the component's life cycle, dispatches
 requests to application components, and provides interfaces to context
 data, such as information about the current request.
 
-[[GCRMA]][[the-ejb-container]]
+[[GCRMA]][[the-jakarta-enterprise-beans-container]]
 
-The EJB Container
-~~~~~~~~~~~~~~~~~
+The Jakarta Enterprise Beans Container
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The EJB container is the interface between enterprise beans, which
+The Jakarta Enterprise Beans container is the interface between enterprise beans, which
 provide the business logic in a Jakarta EE application, and the Jakarta EE
-server. The EJB container runs on the Jakarta EE server and manages the
+server. The Jakarta Enterprise Beans container runs on the Jakarta EE server and manages the
 execution of an application's enterprise beans.
 
 [[GCRLJ]][[the-application-client-container]]

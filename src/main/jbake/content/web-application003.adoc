@@ -1,23 +1,23 @@
 type=page
 status=published
-title=Modifying the Java Persistence API Entity
+title=Modifying the Jakarta Persistence Entity
 next=web-application004.html
 prev=web-application002.html
 ~~~~~~
-= Modifying the Java Persistence API Entity
+= Modifying the Jakarta Persistence Entity
 
 
-[[GJBCS]][[modifying-the-java-persistence-api-entity]]
+[[GJBCS]][[modifying-the-jakarta-persistence-entity]]
 
-Modifying the Java Persistence API Entity
+Modifying the Jakarta Persistence Entity
 -----------------------------------------
 
-The Java Persistence API allows you to create and use Java programming
-language classes that represent data in a database table. A Java
-Persistence API _entity_ is a lightweight, persistent Java programming
+The Jakarta Persistence allows you to create and use Java programming
+language classes that represent data in a database table. A Jakarta
+Persistence _entity_ is a lightweight, persistent Java programming
 language object that represents data in a data store. To create or
 modify entities, or to remove them from the data store, call the
-operations of the Java Persistence API _entity manager_. To query
+operations of the Jakarta Persistence _entity manager_. To query
 entities, or to query the data encapsulated by the persistent fields or
 properties of a entity, use the Java Persistence Query Language (JPQL),
 a language similar to SQL that operates on entities.

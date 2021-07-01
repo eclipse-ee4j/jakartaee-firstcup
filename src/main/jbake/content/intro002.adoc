@@ -58,7 +58,7 @@ Install the NetBeans IDE Distribution for Java EE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To get NetBeans IDE, go to `https://netbeans.org/downloads/` and
-download the Java EE distribution. Install this distribution.
+download the Jakarta EE distribution. Install this distribution.
 
 [[GIOEW]][[add-glassfish-server-as-a-server-in-netbeans-ide]]
 

@@ -21,9 +21,8 @@ more complicated application that uses several different Jakarta EE APIs.
 * link:web-application001.html#GJBCA[The firstcup-war Project]
 * link:web-application002.html#GIMNT[Creating the Web Application Project
 Using the Archetype]
-* link:web-application003.html#GJBCS[Modifying the Java Persistence API
-Entity]
-* link:web-application004.html#GCRLX[Modifying the Enterprise Bean]
+* link:web-application003.html#GJBCS[Modifying the Jakarta Persistence Entity]
+* link:web-application004.html#GCRLX[Modifying the Jakarta Enterprise Bean]
 * link:web-application005.html#GCRLT[Modifying the Web Client]
 * link:web-application006.html#GCTNX[Building, Packaging, Deploying, and
 Running the firstcup-war Web Application]

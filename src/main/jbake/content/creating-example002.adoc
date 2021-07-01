@@ -13,7 +13,7 @@ Coding the dukes-age Example Application
 ----------------------------------------
 
 This section describes how to code the `dukes-age` example application,
-a web application containing a JAX-RS RESTful web service endpoint.
+a web application containing a Jakarta RESTful web service endpoint.
 
 [[GCSKG]][[getting-started]]
 
@@ -78,12 +78,12 @@ from the `DukesBirthdayBean` enterprise bean and `firstcup-war` web
 client. The `dukes-age` web application could be deployed on a completely different machine
 without affecting the functionality of the `firstcup-war` web client.
 
-[[GCROM]][[jax-rs-resources]]
+[[GCROM]][[jakarta-restful-web-services-resources]]
 
-JAX-RS Resources
-^^^^^^^^^^^^^^^^
+Jakarta RESTful Web Services Resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The `DukesAgeResource` class is a JAX-RS resource class that responds to HTTP GET
+The `DukesAgeResource` class is a Jakarta RESTful Web Services resource class that responds to HTTP GET
 requests and returns a `String` representing the age of Duke at the time
 of the request.
 
@@ -122,7 +122,7 @@ You should now see the module you created in the Projects tab. The
 project is created in the `NetBeansProjects` directory under your home
 directory.
 
-The `dukes-age-archetype` archetype creates the structure of the JAX-RS
+The `dukes-age-archetype` archetype creates the structure of the Jakarta RESTful Web Services
 endpoint application, including:
 
 * The `DukesAgeResource` resource class
@@ -201,7 +201,7 @@ the contents of the server log.
 Building and Deploying the Web Service Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Build `dukes-age.war`, the JAX-RS web application, and deploy it to your
+Build `dukes-age.war`, the Jakarta RESTful Web Services web application, and deploy it to your
 GlassFish Server instance.
 
 In the *Projects* tab, right-click `dukes-age` and select *Run*.
