@@ -13,7 +13,7 @@ Coding the dukes-age Example Application
 ----------------------------------------
 
 This section describes how to code the `dukes-age` example application,
-a web application containing a JAX-RS RESTful web service endpoint.
+a web application containing a Jakarta RESTful web service endpoint.
 
 [[GCSKG]][[getting-started]]
 
@@ -84,21 +84,21 @@ from the `DukesBirthdayBean` enterprise bean and `firstcup-war` web
 client. The `dukes-age` web application could be deployed on a completely different machine
 without affecting the functionality of the `firstcup-war` web client.
 
-[[GCROM]][[jax-rs-resources]]
+[[GCROM]][[jakarta-restful-web-services-resources]]
 
-JAX-RS Resources
-^^^^^^^^^^^^^^^^
+Jakarta RESTful Web Services Resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The `DukesAgeResource` class is a JAX-RS resource class that responds to HTTP GET
+The `DukesAgeResource` class is a Jakarta RESTful Web Services resource class that responds to HTTP GET
 requests and returns a `String` representing the age of Duke at the time
 of the request.
 
 The basic `DukesAgeResource` resource class is generated from the
 `dukes-age-archetype` Maven archetype. This class is annotated with the
-`javax.ws.rs.Path` annotation, which specifies the URL suffix to which
+`jakarta.ws.rs.Path` annotation, which specifies the URL suffix to which
 the resource will respond. The `DukesAgeResource` class has a single method,
-`getText`, annotated with the `javax.ws.rs.GET` and
-`javax.ws.rs.Produces` annotations. The `@GET` annotation marks the method as a
+`getText`, annotated with the `jakarta.ws.rs.GET` and
+`jakarta.ws.rs.Produces` annotations. The `@GET` annotation marks the method as a
 responder to HTTP GET requests, and `@Produces` specifies the MIME-type
 of the response sent back from `getText` to clients. In this case, the
 MIME-type is `text/plain`.
@@ -127,7 +127,7 @@ You should now see the module you created in the Project Explorer tab. The
 project is created in the `eclipse-workspace` directory under your home
 directory.
 
-The `dukes-age-archetype` archetype creates the structure of the JAX-RS
+The `dukes-age-archetype` archetype creates the structure of the Jakarta RESTful Web Services
 endpoint application, including:
 
 * The `DukesAgeResource` resource class
@@ -194,6 +194,7 @@ In the tab *Console* you can see the contents of the server log.
 
 Building and Deploying the Web Service Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 With the previous step done, you will have built `dukes-age.war`
 the JAX-RS web application and deployed it to your GlassFish Server instance.

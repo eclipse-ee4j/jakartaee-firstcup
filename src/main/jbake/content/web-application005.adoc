@@ -23,11 +23,11 @@ the following tasks:
 Modify the DukesBDay Managed Bean Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`DukesBDay` is a CDI managed bean that acts as a backing bean. A managed
+`DukesBDay` is a Jakarta Context and Dependency Injection managed bean that acts as a backing bean. A managed
 bean is a lightweight container-managed object that supports a set of
 basic services. A backing bean is a managed bean that provides temporary
 data storage for the values of the components included on a particular
-JavaServer Faces page. The JavaServer Faces application instantiates the
+Jakarta Faces page. The Jakarta Faces application instantiates the
 managed bean and stores it in scope. The section following this one
 describes more about managed beans and how to configure them.
 
@@ -39,7 +39,7 @@ Call the dukes-age Web Service to Retrieve Duke's Current Age
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now modify the `getAge` method of `DukesBDay` to call the `dukes-age`
-web service using the JAX-RS Client API. This will retrieve Duke's
+web service using the Jakarta RESTful Web Services Client API. This will retrieve Duke's
 current age, so it can be compared to the user's age.
 
 1.  Expand the *Source Packages* node, expand the `jakarta.firstcup.firstcupwar.web` node,
@@ -67,13 +67,13 @@ and pasting the following code in bold:
 3.  In the editor window, right-click and select *Source* -> *Format*.
 4.  From the *File* menu, select *Save*.
 
-[[GCRSA]][[get-the-age-difference-from-the-dukesbirthdaybean-enterprise-bean]]
+[[GCRSA]][[get-the-age-difference-from-the-dukesbirthdaybean-jakarta-enterprise-bean]]
 
-Get the Age Difference from the DukesBirthdayBean Enterprise Bean
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Get the Age Difference from the DukesBirthdayBean Jakarta Enterprise Bean
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now modify the `processBirthday` method to get the difference in age
-between the user's age and Duke's age from the `DukesBirthdayBean` EJB,
+between the user's age and Duke's age from the `DukesBirthdayBean` Jakarta Enterprise Bean,
 set the `absAgeDiff` variable to the absolute value of the age
 difference, and set a result string that will forward the user to the
 display page.
@@ -116,7 +116,7 @@ component_, and two XHTML files.
 Resource Libraries in firstcup-war
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A JavaServer Faces resource library is a collection of user-created
+A Jakarta Faces resource library is a collection of user-created
 components collected in a standard location in a web application.
 Resource libraries are identified according to a _resource identifier_, a
 string that represents a particular resource within a web application.
@@ -162,7 +162,7 @@ root at `resources/components/inputDate.xhtml`.
 The inputDate Composite Component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A composite component is a set of user-defined JavaServerFaces and
+A composite component is a set of user-defined Jakarta Faces and
 Facelets components located in a resource. In `firstcup-war`, the
 `inputDate.xhtml` resource, located in the `components` resource
 library, is a composite component that contains tags for reading in a
@@ -187,14 +187,14 @@ single attribute, `date`, that must be specified in pages that use the
 The implementation of the composite component is specified with the
 `<cc:implementation>` tag. The tags within the `<cc:implementation>` are
 the actual component tags that will be added to pages that use the
-composite component. They can be any HTML render kit, JavaServer Faces,
+composite component. They can be any HTML render kit, Jakarta Faces,
 or Facelets tags. The `#{cc.attrs.``attribute-name``}` expression is
 used to get the value of the specified attribute from the page or
 component that is using the composite component.
 
 The implementation of the `inputDate` composite component is as follows.
 An HTML input text component will store the entered text into the `date`
-attribute, accessed by the `#{cc.attrs.date}` expression. A JavaServer
+attribute, accessed by the `#{cc.attrs.date}` expression. A Jakarta
 Faces `convertDateTime` component will convert the entered text to a
 date with the form of `MM/dd/yyyy` (04/13/2014, for example).
 
@@ -262,8 +262,8 @@ difference between the user and Duke.
 The `greeting.xhtml` file contains several pieces of the `firstcup-war`
 application detailed previously. It uses the localized strings contained
 in `WebMessages.properties` and `WebMessages_es.properties`. It uses the
-`DukesBDay` managed bean to call both the `DukesAgeResource` JAX-RS web
-service and the `DukesBirthdayBean` enterprise bean. It uses the
+`DukesBDay` managed bean to call both the `DukesAgeResource` Jakarta RESTful web
+service and the `DukesBirthdayBean` Jakarta Enterprise Bean. It uses the
 `inputDate` composite component to create the input for the user to
 enter a birthday.
 
@@ -308,10 +308,10 @@ prefix of `fc`, and is used to specify the `inputDate` composite
 component in the form below. The
 `<fc:inputDate id="userBirthday" date="\#{dukesBDay.yourBD}" />` tag has
 the required `date` attribute, and it stores the value in the `yourBD`
-property in the `DukesBDay` managed bean by using the EL expression
+property in the `DukesBDay` managed bean by using the Jakarta Expression Language
 `#{dukesBDay.yourBD}`.
 
-The localized strings are referenced by the EL expressions
+The localized strings are referenced by the Jakarta Expression Language
 `\#{bundle.``property-name``}`. For example, the
 `<h:outputText value="#{bundle.Welcome}"/>` tag will display the
 following string in English locales:
@@ -334,16 +334,16 @@ strings are displayed based on whether the user is the same age,
 younger, or older than Duke. The text can be displayed or not based on
 the conditions specified by the `rendered` attribute of the
 `<h:outputText>` tag. The conditions used in the `rendered` attribute
-are Expression Language (EL) alternatives to the Java programming
+are Jakarta Expression Language alternatives to the Java programming
 language conditional operators to allow XML parsing of the XHTML file.
 
 [[sthref11]][[GIMVG]]
 
-Table 4-1 Conditional Operator EL Language Alternatives
+Table 4-1 Conditional Operator Jakarta Expression Language Alternatives
 
 [width="60%",cols="25%,40%,35%"]
 |=======================================================================
-|*Logical Condition* |*Java Programming Language Conditional Operator* |*EL
+|*Logical Condition* |*Java Programming Language Conditional Operator* |*Jakarta Expression Language
 Alternative*
 |AND a|
 `&&`
