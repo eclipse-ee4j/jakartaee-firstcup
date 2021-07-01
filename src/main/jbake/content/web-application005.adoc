@@ -42,8 +42,8 @@ Now modify the `getAge` method of `DukesBDay` to call the `dukes-age`
 web service using the Jakarta RESTful Web Services Client API. This will retrieve Duke's
 current age, so it can be compared to the user's age.
 
-1.  Expand the *Source Packages* node, expand the `firstcup.web` node,
-then double-click the `DukesBDay.java ` file to open it in the editor
+1.  Expand the *Source Packages* node, expand the `jakarta.firstcup.firstcupwar.web` node,
+then double-click the `DukesBDay.java` file to open it in the editor
 window.
 2.  Find the `getAge` method and implement its functionality by copying
 and pasting the following code in bold:
@@ -64,7 +64,7 @@ and pasting the following code in bold:
         return age;*
     }
 ----
-3.  In the editor window, right-click and select *Format*.
+3.  In the editor window, right-click and select *Source* -> *Format*.
 4.  From the *File* menu, select *Save*.
 
 [[GCRSA]][[get-the-age-difference-from-the-dukesbirthdaybean-jakarta-enterprise-bean]]
@@ -100,7 +100,7 @@ the absolute age difference stored in the `absAgeDiff` property, and
 sets the average age difference stored in the `averageAgeDifference`
 property. It returns the relative URL of the response page to which the
 user will be forwarded.
-2.  In the editor window, right-click and select *Format*.
+2.  In the editor window, right-click and select *Source* -> *Format*.
 3.  From the *File* menu, select *Save*.
 
 [[GIMVD]][[creating-the-facelets-client]]
@@ -222,7 +222,7 @@ Implement the inputDate Composite Component
 Modify the `inputDate` composite component in the `components` resource
 library.
 
-1.  Expand *Web Pages*, then `resources`, then `components`, and open
+1.  Expand *Deployed Resources*, then `webapp`, then `resources`, then `components`, and open
 `inputDate.xhtml`.
 2.  Add the composite component interface definition between the opening
 and closing `<cc:interface>` tags in `inputDate.xhtml`:
@@ -246,7 +246,7 @@ closing `cc:implementation` tags:
         <h:message for="getdate" style="color:red" />*
     </cc:implementation>
 ----
-4.  In the editor window, right-click and select *Format*.
+4.  In the editor window, right-click and select *Source* -> *Format*.
 5.  From the *File* menu, select *Save*.
 
 [[GIMUM]][[the-facelets-web-interface]]
@@ -437,9 +437,9 @@ Add the Form to greeting.xhtml
 Add the form that provides the user interface for displaying Duke's age
 and specifying the user's birthday.
 
-1.  In the *Projects* tab, double-click `greeting.xhtml` in the
-`firstcup-war` project and, in the editor window, replace the text
-between the `<h:form>` and `</h:form>` tags with the following:
+1.  Expand *Deployed Resources*, then `webapp`, and open `greeting.xhtml`,
+in the editor window, replace the text between the `<h:form>` and `</h:form>`
+tags with the following:
 +
 [source,oac_no_warn]
 ----
@@ -457,7 +457,7 @@ between the `<h:form>` and `</h:form>` tags with the following:
     <h:commandButton value="#{bundle.Submit}"
                      action="#{dukesBDay.processBirthday}"/>
 ----
-2.  In the editor window, right-click and select *Format*.
+2.  In the editor window, right-click and select *Source* -> *Format*.
 3.  From the *File* menu, select *Save*.
 
 [[GIMVW]][[add-the-form-to-response.html]]
@@ -469,9 +469,9 @@ Add a form that displays the age difference between Duke and the user,
 displays the average age difference of all users, and allows the user to
 navigate back to `greeting.xhtml`.
 
-1.  In the *Projects* tab, double-click `response.xhtml` in the
-`firstcup-war` project and, in the editor window, replace the text
-between the `<h:form>` and `</h:form>` tags with the following:
+1.  Expand *Deployed Resources*, then `webapp`, and open `response.xhtml`,
+in the editor window, replace the text between the `<h:form>` and `</h:form>`
+tags with the following:
 +
 [source,oac_no_warn]
 ----
@@ -500,5 +500,5 @@ between the `<h:form>` and `</h:form>` tags with the following:
     <p/>
     <h:commandButton id="back" value="#{bundle.Back}" action="greeting"/>
 ----
-2.  In the editor window, right-click and select *Format*.
+2.  In the editor window, right-click and select *Source* -> *Format*.
 3.  From the *File* menu, select *Save*.

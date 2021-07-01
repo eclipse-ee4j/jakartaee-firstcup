@@ -31,7 +31,7 @@ Edit the Constructor of the FirstcupUser Entity
 
 Add code to the constructor for `FirstcupUser`.
 
-1.  Expand the *Source Packages* node, expand the `firstcup.entity` node,
+1.  Expand the *Source Packages* node, expand the `jakarta.firstcup.firstcupwar.entity` node,
 then double-click the `FirstcupUser.java` file to open it in the editor
 window.
 2.  Below the field definitions in the `FirstcupUser` class, add the
@@ -46,7 +46,7 @@ following code in bold to the second, two-argument constructor:
         ageDifference = difference;*
     }
 ----
-3.  Right-click in the editor window and select *Format*.
+3.  Right-click in the editor window and select *Source* -> *Format*.
 
 [[GJBCM]][[add-a-named-query-to-the-firstcupuser-entity]]
 
@@ -72,5 +72,5 @@ query="SELECT AVG(u.ageDifference) FROM FirstcupUser u")
 The `@NamedQuery` annotation appears just before the class definition of
 the entity and has two required attributes: `name`, with the unique name
 for this query; and `query`, the JPQL query definition.
-2.  Right-click in the editor window and select *Format*.
+2.  Right-click in the editor window and select *Source* -> *Format*.
 3.  From the *File* menu, select *Save*.

@@ -17,8 +17,8 @@ first:
 
 * link:#software-compatibility[See the software compatibility notice]
 * link:#get-the-jakarta-ee-8-sdk[Get the Jakarta EE 8 SDK]
-* link:#install-the-netbeans-ide-distribution-for-java-ee[Install the NetBeans IDE distribution for Java EE]
-* link:#add-glassfish-server-as-a-server-in-netbeans-ide[Add GlassFish Server as a server in NetBeans IDE]
+* link:#install-the-eclipse-ide-distribution-for-java-ee[Install the Eclipse IDE for Enterprise Java Developers]
+* link:#add-glassfish-server-as-a-server-in-eclipse-ide[Add GlassFish Server as a server in Eclipse IDE]
 ////
 * link:#get-the-latest-updates-to-this-tutorial[Get the latest updates to this tutorial]
 ////
@@ -52,34 +52,46 @@ Download and install the Glassfish. The location where you install it is typical
 The tutorial is installed in the `docs/firstcup` directory of your Glassfish
 installation.
 
-[[GCRNU]][[install-the-netbeans-ide-distribution-for-java-ee]]
+[[GCRNU]][[install-the-eclipse-ide-distribution-for-java-ee]]
 
-Install the NetBeans IDE Distribution for Java EE
+Install the IDE for Enterprise Java Developers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To get Eclipse IDE, go to `https://www.eclipse.org/downloads/` and
+download the Enterprise Java Developers distribution through the installer or available packages.
+Install this distribution.
 
 To get NetBeans IDE, go to `https://netbeans.org/downloads/` and
 download the Jakarta EE distribution. Install this distribution.
 
-[[GIOEW]][[add-glassfish-server-as-a-server-in-netbeans-ide]]
+[[GIOEW]][[add-glassfish-server-as-a-server-in-eclipse-ide]]
 
-Add GlassFish Server as a Server in NetBeans IDE
+Add GlassFish Server as a Server in Eclipse IDE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once you have all the necessary downloads, you must configure NetBeans
+Once you have all the necessary downloads, you must configure Eclipse
 IDE and get the latest tutorial updates.
 
-To run this tutorial in NetBeans IDE, you must register your GlassFish
-Server installation as a NetBeans server instance. Follow these
-instructions to register the GlassFish Server in NetBeans IDE.
+To run this tutorial in Eclipse IDE, you must register your GlassFish
+Server installation as a Eclipse server instance. Follow these
+instructions to register the GlassFish Server in Eclipse IDE.
 
-1.  From the *Tools* menu, select *Servers*.
-2.  In the Servers dialog, click *Add Server*.
-3.  Under *Choose Server*, select *GlassFish Server* and click *Next*.
-4.  Under *Server Location*, browse to or enter the location of your
+First of all it's needed to install Eclipse Sapphire, to install just follow the instructions:
+`https://download.eclipse.org/sapphire/9.1.1/repository/`
+
+After that just install GlassFish Tools it's the same process:
+`https://download.eclipse.org/glassfish-tools/1.0.1/repository/`
+
+Now we can add GlassFish as a server in Eclipse IDE
+
+1.  From the *File* > *New* > *Other...*, search for *Server*, select and click next.
+2.  In the New Server dialog, search for *Glassfish*, select *GlassFish* and click next.
+3.  Under *GlassFish Location*, browse to or enter the location of your
 GlassFish Server installation.
-5.  Click *Next*.
-6.  Under *Domain Location*, select the default domain, `domain1`.
-7.  Click *Finish*.
+4.  If *Java location* it's not automatically identified, look for the folder where your java
+is installed.
+5.  Under *Define GlassFish Application Server properties*, leave the default options.
+6.  Then click *Finish*.
 
 ////
 [[GIMVN]][[get-the-latest-updates-to-this-tutorial]]
