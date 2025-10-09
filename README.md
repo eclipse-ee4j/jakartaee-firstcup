@@ -20,7 +20,7 @@ then see the [repository](https://github.com/eclipse-ee4j/jakartaee-firstcup).
 * [eclipse-ee4j/jakartaee-firstcup-examples](https://github.com/eclipse-ee4j/jakartaee-firstcup-examples):
 this repository contains the example code that is used in the {{site.title}}.
 
-* [Jakarta EE Tutorial](https://eclipse-ee4j.github.io/jakartaee-tutorial/):
+* [Jakarta EE Tutorial](https://jakarta.ee/learn/docs/jakartaee-tutorial/current/index.html):
 the Jakarta EE Tutorial teaches and demonstrates the Jakarta EE
 features that are used to develop enterprise applications.
 
